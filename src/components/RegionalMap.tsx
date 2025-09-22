@@ -180,7 +180,7 @@ const RegionalMap: React.FC<RegionalMapProps> = ({ data }) => {
           </div>
           <div className="flex items-center gap-2">
             <div className="w-3 h-3 rounded-full bg-blue-500" />
-            <span><$10B</span>
+            <span>&lt;$10B</span>
           </div>
         </div>
       </div>

@@ -1,4 +1,3 @@
-import React from 'react';
 import Header from './components/Header';
 import KeyMetrics from './components/KeyMetrics';
 import SpendingChart from './components/SpendingChart';

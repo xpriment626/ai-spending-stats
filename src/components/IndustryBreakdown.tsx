@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { PieChart, Pie, Cell, ResponsiveContainer, Tooltip, BarChart, Bar, XAxis, YAxis, CartesianGrid } from 'recharts';
 import { motion } from 'framer-motion';
 import { IndustryData, CompanySizeData } from '../types';
@@ -9,8 +9,7 @@ interface IndustryBreakdownProps {
 }
 
 const IndustryBreakdown: React.FC<IndustryBreakdownProps> = ({ industryData, companySizeData }) => {
-  const [activeView, setActiveView] = useState<'industry' | 'size'>('industry');
-
+  
   const CustomTooltip = ({ active, payload }: any) => {
     if (active && payload && payload.length) {
       const data = payload[0].payload;
@@ -145,7 +144,7 @@ const IndustryBreakdown: React.FC<IndustryBreakdownProps> = ({ industryData, com
         </div>
 
         <div className="space-y-2">
-          {companySizeData.slice(0, 3).map((size, index) => (
+          {companySizeData.slice(0, 3).map((size) => (
             <div key={size.sizeCategory} className="flex items-center justify-between text-sm">
               <div className="flex items-center gap-2">
                 <div className="w-2 h-2 bg-blue-500 rounded-full" />
