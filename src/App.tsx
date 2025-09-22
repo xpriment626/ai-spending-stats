@@ -1,7 +1,7 @@
 import Header from './components/Header';
 import KeyMetrics from './components/KeyMetrics';
 import SpendingChart from './components/SpendingChart';
-import Timeline from './components/Timeline';
+import ServiceOpportunityMatrix from './components/ServiceOpportunityMatrix';
 import RegionalMap from './components/RegionalMap';
 import IndustryBreakdown from './components/IndustryBreakdown';
 import { mockDashboardData } from './data/mockData';
@@ -10,7 +10,8 @@ function App() {
   const {
     keyMetrics,
     spendingTrend,
-    timeline,
+    serviceOpportunities,
+    implementationGaps,
     regionalData,
     industryBreakdown,
     companySizeData
@@ -28,7 +29,10 @@ function App() {
         </div>
 
         <div className="grid grid-cols-1 xl:grid-cols-2 gap-8 mb-8">
-          <Timeline events={timeline} />
+          <ServiceOpportunityMatrix
+            opportunities={serviceOpportunities}
+            gaps={implementationGaps}
+          />
           <RegionalMap data={regionalData} />
         </div>
 

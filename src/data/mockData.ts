@@ -1,4 +1,4 @@
-import { DashboardData, SpendingData, RegionalData, IndustryData, CompanySizeData, KeyMetric, TimelineEvent } from '../types';
+import { DashboardData, SpendingData, RegionalData, IndustryData, CompanySizeData, KeyMetric, TimelineEvent, ServiceOpportunity, ImplementationGap } from '../types';
 
 // Based on research from IDC, McKinsey, a16z, IBM, and Menlo Ventures
 export const spendingTrendData: SpendingData[] = [
@@ -102,12 +102,46 @@ export const timelineData: TimelineEvent[] = [
   { year: 2025, month: 1, title: 'Projected: AI Becomes Essential Infrastructure', description: 'AI transitions from experimental to core business', type: 'milestone' },
 ];
 
+// Service opportunity matrix - high spending + low implementation success = high service opportunity
+export const serviceOpportunityData: ServiceOpportunity[] = [
+  // Enterprise sector
+  { sector: 'Financial Services', companySize: 'Enterprise ($1B+)', aiSpending: 2890, implementationSuccess: 15, opportunityScore: 92, serviceRevenuePotential: 450, challenges: ['Regulatory compliance', 'Legacy system integration', 'Risk management'], color: '#EF4444' },
+  { sector: 'Healthcare', companySize: 'Enterprise ($1B+)', aiSpending: 2340, implementationSuccess: 18, opportunityScore: 89, serviceRevenuePotential: 380, challenges: ['Data privacy', 'Clinical validation', 'Workflow integration'], color: '#EF4444' },
+  { sector: 'Manufacturing', companySize: 'Enterprise ($1B+)', aiSpending: 1870, implementationSuccess: 22, opportunityScore: 85, serviceRevenuePotential: 320, challenges: ['Operational technology integration', 'Safety requirements', 'Workforce adaptation'], color: '#F97316' },
+
+  // Large company sector
+  { sector: 'Technology', companySize: 'Large ($100M-$1B)', aiSpending: 890, implementationSuccess: 35, opportunityScore: 78, serviceRevenuePotential: 180, challenges: ['Talent acquisition', 'Infrastructure scaling', 'Product integration'], color: '#F97316' },
+  { sector: 'Retail & E-commerce', companySize: 'Large ($100M-$1B)', aiSpending: 670, implementationSuccess: 28, opportunityScore: 82, serviceRevenuePotential: 140, challenges: ['Customer data integration', 'Real-time processing', 'Personalization'], color: '#F97316' },
+  { sector: 'Financial Services', companySize: 'Large ($100M-$1B)', aiSpending: 780, implementationSuccess: 31, opportunityScore: 79, serviceRevenuePotential: 160, challenges: ['Regulatory compliance', 'Risk assessment', 'Customer trust'], color: '#F97316' },
+
+  // Mid-market opportunities
+  { sector: 'Healthcare', companySize: 'Mid-Market ($10M-$100M)', aiSpending: 340, implementationSuccess: 42, opportunityScore: 68, serviceRevenuePotential: 75, challenges: ['Budget constraints', 'Technical expertise', 'Vendor selection'], color: '#EAB308' },
+  { sector: 'Manufacturing', companySize: 'Mid-Market ($10M-$100M)', aiSpending: 280, implementationSuccess: 38, opportunityScore: 71, serviceRevenuePotential: 65, challenges: ['Process modernization', 'Skills gap', 'ROI measurement'], color: '#EAB308' },
+  { sector: 'Professional Services', companySize: 'Mid-Market ($10M-$100M)', aiSpending: 190, implementationSuccess: 45, opportunityScore: 64, serviceRevenuePotential: 45, challenges: ['Client adoption', 'Service delivery', 'Competitive differentiation'], color: '#EAB308' },
+
+  // Lower opportunity (higher success rates)
+  { sector: 'Technology', companySize: 'Mid-Market ($10M-$100M)', aiSpending: 420, implementationSuccess: 58, opportunityScore: 52, serviceRevenuePotential: 85, challenges: ['Resource allocation', 'Market positioning', 'Technical debt'], color: '#22C55E' },
+  { sector: 'Media & Entertainment', companySize: 'Large ($100M-$1B)', aiSpending: 310, implementationSuccess: 52, opportunityScore: 56, serviceRevenuePotential: 65, challenges: ['Content automation', 'Creative workflow', 'Rights management'], color: '#22C55E' },
+  { sector: 'Energy & Utilities', companySize: 'Enterprise ($1B+)', aiSpending: 1240, implementationSuccess: 48, opportunityScore: 61, serviceRevenuePotential: 210, challenges: ['Infrastructure modernization', 'Regulatory oversight', 'Grid integration'], color: '#84CC16' },
+];
+
+// Implementation gap analysis - showcasing the acceleration disconnect
+export const implementationGapData: ImplementationGap[] = [
+  { metric: 'Infrastructure Investment', investmentLevel: 97, realizationLevel: 19, gapSize: 78, description: 'Massive infrastructure spending vs. minimal revenue impact', trend: 'widening' },
+  { metric: 'Talent & Skills Readiness', investmentLevel: 32, realizationLevel: 15, gapSize: 17, description: '46% cite talent gaps as primary implementation barrier', trend: 'widening' },
+  { metric: 'Tool Availability', investmentLevel: 89, realizationLevel: 23, gapSize: 66, description: 'Abundant AI tools but low successful enterprise adoption', trend: 'widening' },
+  { metric: 'Process Integration', investmentLevel: 45, realizationLevel: 28, gapSize: 17, description: 'Legacy systems struggle with AI integration complexity', trend: 'stable' },
+  { metric: 'ROI Achievement', investmentLevel: 78, realizationLevel: 20, gapSize: 58, description: 'Only 20% of businesses see earnings benefits from AI', trend: 'stable' },
+  { metric: 'Regulatory Compliance', investmentLevel: 67, realizationLevel: 34, gapSize: 33, description: 'AI governance frameworks lag behind implementation needs', trend: 'narrowing' },
+];
+
 export const mockDashboardData: DashboardData = {
   keyMetrics,
   spendingTrend: spendingTrendData,
   regionalData,
   industryBreakdown: industryData,
   companySizeData,
-  timeline: timelineData,
+  serviceOpportunities: serviceOpportunityData,
+  implementationGaps: implementationGapData,
   lastUpdated: new Date().toISOString(),
 };

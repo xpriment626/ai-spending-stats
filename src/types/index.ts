@@ -51,12 +51,33 @@ export interface TimelineEvent {
   type: 'milestone' | 'funding' | 'adoption' | 'regulation';
 }
 
+export interface ServiceOpportunity {
+  sector: string;
+  companySize: string;
+  aiSpending: number; // in millions USD
+  implementationSuccess: number; // percentage (0-100)
+  opportunityScore: number; // calculated score (0-100)
+  serviceRevenuePotential: number; // in millions USD
+  challenges: string[];
+  color: string;
+}
+
+export interface ImplementationGap {
+  metric: string;
+  investmentLevel: number; // percentage or score
+  realizationLevel: number; // percentage or score
+  gapSize: number; // difference
+  description: string;
+  trend: 'widening' | 'stable' | 'narrowing';
+}
+
 export interface DashboardData {
   keyMetrics: KeyMetric[];
   spendingTrend: SpendingData[];
   regionalData: RegionalData[];
   industryBreakdown: IndustryData[];
   companySizeData: CompanySizeData[];
-  timeline: TimelineEvent[];
+  serviceOpportunities: ServiceOpportunity[];
+  implementationGaps: ImplementationGap[];
   lastUpdated: string;
 }
