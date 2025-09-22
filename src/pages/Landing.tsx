@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+import PartnersCarousel from '../components/PartnersCarousel';
 
 function Landing() {
   return (
@@ -19,9 +20,9 @@ function Landing() {
       </header>
 
       {/* Main Content */}
-      <main className="max-w-4xl mx-auto px-6 py-16">
+      <main>
         {/* Hero Section */}
-        <section className="mb-16">
+        <section className="max-w-4xl mx-auto px-6 py-8 mb-8">
           <h1 className="text-6xl font-bold text-gray-900 mb-8">
             Arasaka Labs
           </h1>
@@ -46,32 +47,8 @@ function Landing() {
           </button>
         </section>
 
-        {/* Partners Section */}
-        <section>
-          <h2 className="text-3xl font-bold text-gray-900 text-center mb-12">
-            Our Partners
-          </h2>
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8 items-center justify-items-center">
-            <div className="bg-gray-100 rounded-lg p-6 w-full h-20 flex items-center justify-center">
-              <span className="text-gray-600 font-medium">Atlas Technologies</span>
-            </div>
-            <div className="bg-gray-100 rounded-lg p-6 w-full h-20 flex items-center justify-center">
-              <span className="text-gray-600 font-medium">Meridian Systems</span>
-            </div>
-            <div className="bg-gray-100 rounded-lg p-6 w-full h-20 flex items-center justify-center">
-              <span className="text-gray-600 font-medium">Vertex Innovations</span>
-            </div>
-            <div className="bg-gray-100 rounded-lg p-6 w-full h-20 flex items-center justify-center">
-              <span className="text-gray-600 font-medium">TechCorp Industries</span>
-            </div>
-            <div className="bg-gray-100 rounded-lg p-6 w-full h-20 flex items-center justify-center">
-              <span className="text-gray-600 font-medium">NexGen Solutions</span>
-            </div>
-            <div className="bg-gray-100 rounded-lg p-6 w-full h-20 flex items-center justify-center">
-              <span className="text-gray-600 font-medium">Quantum Dynamics</span>
-            </div>
-          </div>
-        </section>
+        {/* Partners Section - Full Width */}
+        <PartnersCarousel />
       </main>
     </div>
   );
