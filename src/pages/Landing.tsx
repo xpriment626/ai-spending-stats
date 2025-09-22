@@ -48,7 +48,7 @@ function Landing() {
             <img
               src="/assets/arasaka-logo.png"
               alt="Arasaka Labs"
-              className="h-8 w-auto"
+              className="h-12 w-auto"
             />
           </div>
           <div className="flex items-center space-x-8">

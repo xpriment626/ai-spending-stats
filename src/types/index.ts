@@ -71,6 +71,13 @@ export interface ImplementationGap {
   trend: 'widening' | 'stable' | 'narrowing';
 }
 
+export interface TabContent {
+  id: string;
+  label: string;
+  title: string;
+  content: string[];
+}
+
 export interface DashboardData {
   keyMetrics: KeyMetric[];
   spendingTrend: SpendingData[];
