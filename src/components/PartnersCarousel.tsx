@@ -24,10 +24,10 @@ const PartnersCarousel: React.FC = () => {
   const extendedPartners = [...partners, ...partners, ...partners];
 
   return (
-    <section className="w-full overflow-hidden py-8 bg-gradient-to-r from-slate-50 via-white to-slate-50">
-      <div className="mb-6">
+    <section className="w-full overflow-hidden py-4 bg-gradient-to-br from-slate-50 to-blue-50">
+      <div className="mb-4">
         <motion.h2
-          className="text-3xl font-bold text-gray-900 text-center"
+          className="text-2xl font-bold text-gray-900 text-center"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
@@ -38,8 +38,8 @@ const PartnersCarousel: React.FC = () => {
 
       <div className="relative">
         {/* Gradient overlays for seamless edges */}
-        <div className="absolute left-0 top-0 w-32 h-full bg-gradient-to-r from-white via-white to-transparent z-10 pointer-events-none" />
-        <div className="absolute right-0 top-0 w-32 h-full bg-gradient-to-l from-white via-white to-transparent z-10 pointer-events-none" />
+        <div className="absolute left-0 top-0 w-32 h-full bg-gradient-to-r from-slate-50 via-slate-50 to-transparent z-10 pointer-events-none" />
+        <div className="absolute right-0 top-0 w-32 h-full bg-gradient-to-l from-blue-50 via-blue-50 to-transparent z-10 pointer-events-none" />
 
         {/* Carousel container */}
         <div className="flex overflow-hidden">
@@ -52,7 +52,7 @@ const PartnersCarousel: React.FC = () => {
               x: {
                 repeat: Infinity,
                 repeatType: 'loop',
-                duration: 160, // Much slower for relaxed viewing (75% speed reduction)
+                duration: 200, // Much slower for relaxed viewing (75% speed reduction)
                 ease: 'linear',
               },
             }}
