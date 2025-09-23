@@ -10,7 +10,7 @@ interface ServiceOpportunityMatrixProps {
 
 const ServiceOpportunityMatrix: React.FC<ServiceOpportunityMatrixProps> = ({ opportunities, gaps }) => {
   const [selectedOpportunity, setSelectedOpportunity] = useState<ServiceOpportunity | null>(null);
-  const [activeView, setActiveView] = useState<'matrix' | 'gaps'>('matrix');
+  const [activeView, setActiveView] = useState<'matrix' | 'gaps'>('gaps');
 
   const getOpportunityIntensity = (score: number) => {
     if (score >= 85) return { intensity: 'opacity-95', size: 'w-8 h-8', label: 'Critical' };
@@ -58,16 +58,6 @@ const ServiceOpportunityMatrix: React.FC<ServiceOpportunityMatrixProps> = ({ opp
 
           <div className="flex bg-gray-100 rounded-lg p-1">
             <button
-              onClick={() => setActiveView('matrix')}
-              className={`px-4 py-2 rounded-md text-sm font-medium transition-all ${
-                activeView === 'matrix'
-                  ? 'bg-white shadow-sm text-gray-900'
-                  : 'text-gray-600 hover:text-gray-900'
-              }`}
-            >
-              Opportunity Matrix
-            </button>
-            <button
               onClick={() => setActiveView('gaps')}
               className={`px-4 py-2 rounded-md text-sm font-medium transition-all ${
                 activeView === 'gaps'
@@ -76,6 +66,16 @@ const ServiceOpportunityMatrix: React.FC<ServiceOpportunityMatrixProps> = ({ opp
               }`}
             >
               Implementation Gaps
+            </button>
+            <button
+              onClick={() => setActiveView('matrix')}
+              className={`px-4 py-2 rounded-md text-sm font-medium transition-all ${
+                activeView === 'matrix'
+                  ? 'bg-white shadow-sm text-gray-900'
+                  : 'text-gray-600 hover:text-gray-900'
+              }`}
+            >
+              Opportunity Matrix
             </button>
           </div>
         </div>
