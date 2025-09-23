@@ -6,36 +6,36 @@ import { TabContent } from '../types/index';
 
 const tabsData: TabContent[] = [
   {
-    id: 'about',
-    label: '{about}',
-    title: 'About Arasaka Labs',
+    id: 'paradox',
+    label: '{the paradox}',
+    title: 'The $154B AI Investment Paradox',
     content: [
-      'We are a venture studio specializing in AI service implementations for enterprise clients. Our mission is to bridge the acceleration gap between AI tooling availability and successful enterprise adoption.',
-      'Founded on the principle that technology advances faster than organizations can implement, we provide high-touch consulting and implementation services that transform AI investments into measurable business outcomes.'
+      'Enterprise AI spending reaches $154.2B in 2024 with 97% year-over-year growth, yet only 19% of companies achieve meaningful revenue impact from their AI investments.',
+      'This creates the largest service opportunity in enterprise technology: bridging the acceleration gap between AI tooling availability and successful implementation. The faster AI evolves, the wider this gap becomes.'
     ]
   },
   {
     id: 'thesis',
     label: '{our thesis}',
-    title: 'The Acceleration Gap',
+    title: 'High-Touch Services Fill the Gap',
     content: [
-      'The AI tooling and infrastructure ecosystem advances exponentially, while enterprise implementation success rates remain frustratingly low. This creates a massive service opportunity.',
-      'Our thesis: The faster technology evolves, the wider the implementation gap becomes. Companies need expert guidance to navigate this complexity and achieve meaningful ROI from their AI investments.'
+      'While AI infrastructure scales exponentially, human organizations adapt linearly. This fundamental mismatch creates a persistent 78% implementation gap across enterprises.',
+      'Forward-deployed engineering services that combine deep technical expertise with implementation methodology can compress time-to-value from 24 months to 11 months while achieving 3.5x higher success rates.'
     ]
   },
   {
     id: 'numbers',
     label: '{the numbers}',
-    title: 'Market Opportunity',
+    title: '$1.8B Service Opportunity',
     content: [
-      'The data tells a compelling story: $1.8B total service opportunity across enterprise AI implementations, with 78% average implementation gap in the market.',
-      'Financial services show 92% opportunity score while only 19% achieve meaningful revenue impact. This disparity represents our target market and value proposition.'
+      'Financial Services enterprises show 92% opportunity score with only 15% implementation success. Healthcare follows at 89% opportunity score with 18% success rate.',
+      'The math is clear: high spending + low success = high service demand. Service-assisted implementations achieve 78% success rates vs. 22% for DIY approaches, creating a $1.8B addressable market.'
     ]
   }
 ];
 
 function Landing() {
-  const [activeTab, setActiveTab] = useState<string>('about');
+  const [activeTab, setActiveTab] = useState<string>('paradox');
 
   const activeTabData = tabsData.find(tab => tab.id === activeTab) || tabsData[0];
 
@@ -59,6 +59,25 @@ function Landing() {
           </div>
         </nav>
       </header>
+
+      {/* Under Construction Notice */}
+      <div className="px-8 mb-4">
+        <div className="max-w-7xl mx-auto">
+          <motion.div
+            className="glass-effect bg-amber-50/80 border border-amber-200/50 rounded-lg px-4 py-3"
+            initial={{ opacity: 0, y: -10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+          >
+            <div className="flex items-center space-x-2">
+              <div className="w-2 h-2 bg-amber-500 rounded-full animate-pulse"></div>
+              <p className="text-amber-800 text-sm font-medium">
+                🚧 Under Construction - Preview Version
+              </p>
+            </div>
+          </motion.div>
+        </div>
+      </div>
 
       {/* Main Content */}
       <main>
