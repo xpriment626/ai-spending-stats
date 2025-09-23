@@ -245,7 +245,7 @@ const ImplementationTimelineComparison: React.FC = () => {
 
       <div className="mt-4 text-center p-3 bg-yellow-50 rounded-lg">
         <p className="text-yellow-800 font-medium text-sm">
-          Service-assisted implementations reduce time-to-value by 13 months while achieving 3.5x higher success rates
+          Service-assisted implementations achieve 2.2x faster time-to-value with 3.5x higher success rates
         </p>
       </div>
     </motion.div>

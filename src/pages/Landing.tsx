@@ -26,10 +26,10 @@ const tabsData: TabContent[] = [
   {
     id: 'numbers',
     label: '{the numbers}',
-    title: '$1.8B Service Opportunity',
+    title: 'Multi-Billion Dollar Service Opportunity',
     content: [
       'Financial Services enterprises show 92% opportunity score with only 15% implementation success. Healthcare follows at 89% opportunity score with 18% success rate.',
-      'The math is clear: high spending + low success = high service demand. Service-assisted implementations achieve 78% success rates vs. 22% for DIY approaches, creating a $1.8B addressable market.'
+      'The math is clear: high spending + low success = high service demand. Service-assisted implementations achieve 78% success rates vs. 22% for DIY approaches, creating a multi-billion dollar addressable market.'
     ]
   }
 ];

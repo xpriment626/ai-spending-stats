@@ -277,7 +277,7 @@ const ServiceOpportunityMatrix: React.FC<ServiceOpportunityMatrixProps> = ({ opp
                 <div className="text-sm text-gray-600">Average Implementation Gap</div>
               </div>
               <div className="text-center bg-orange-50 rounded-lg p-4">
-                <div className="text-2xl font-bold text-orange-600">$1.8B</div>
+                <div className="text-2xl font-bold text-orange-600">Multi-Billion</div>
                 <div className="text-sm text-gray-600">Total Service Opportunity</div>
               </div>
               <div className="text-center bg-green-50 rounded-lg p-4">

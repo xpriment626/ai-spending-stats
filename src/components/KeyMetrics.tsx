@@ -191,7 +191,7 @@ const KeyMetrics: React.FC<KeyMetricsProps> = ({ metrics: _ }) => {
         <p className="text-yellow-800 font-medium">
           Despite massive investment growth, successful AI implementation remains stagnant —
           creating a {' '}
-          <span className="font-bold text-yellow-900">$1.8B service opportunity</span>
+          <span className="font-bold text-yellow-900">multi-billion dollar service opportunity</span>
         </p>
       </motion.div>
     </div>

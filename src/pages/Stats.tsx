@@ -30,8 +30,8 @@ function Stats() {
           totalInvestment="$154.2B"
           implementationGap={78}
           revenueImpactFailure={19}
-          serviceOpportunity="$1.8B"
-          yearOverYearGrowth={97}
+          serviceOpportunity="Multi-billion dollar"
+          yearOverYearGrowth={85}
         />
 
         {/* Narrative Transition */}
