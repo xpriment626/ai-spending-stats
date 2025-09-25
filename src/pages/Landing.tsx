@@ -1,7 +1,6 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
-import PartnersCarousel from '../components/PartnersCarousel';
 import { TabContent } from '../types/index';
 
 const tabsData: TabContent[] = [
@@ -40,9 +39,9 @@ function Landing() {
   const activeTabData = tabsData.find(tab => tab.id === activeTab) || tabsData[0];
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 to-blue-50">
+    <div className="h-screen bg-gradient-to-br from-slate-50 to-blue-50 flex flex-col overflow-hidden">
       {/* Header Navigation */}
-      <header className="px-8 py-6">
+      <header className="flex-none px-8 py-6">
         <nav className="flex justify-between items-center max-w-7xl mx-auto">
           <div className="flex items-center">
             <img
@@ -60,29 +59,9 @@ function Landing() {
         </nav>
       </header>
 
-      {/* Under Construction Notice */}
-      <div className="px-8 mb-4">
-        <div className="max-w-7xl mx-auto">
-          <motion.div
-            className="glass-effect bg-amber-50/80 border border-amber-200/50 rounded-lg px-4 py-3"
-            initial={{ opacity: 0, y: -10 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-          >
-            <div className="flex items-center space-x-2">
-              <div className="w-2 h-2 bg-amber-500 rounded-full animate-pulse"></div>
-              <p className="text-amber-800 text-sm font-medium">
-                🚧 Under Construction - Preview Version
-              </p>
-            </div>
-          </motion.div>
-        </div>
-      </div>
-
-      {/* Main Content */}
-      <main>
-        {/* Hero Section */}
-        <section className="px-8 py-6 mb-8">
+      {/* Main Content - Centered */}
+      <main className="flex-1 flex items-center">
+        <section className="w-full px-8">
           <div className="max-w-7xl mx-auto">
             {/* Title - Left Aligned */}
             <motion.h1
@@ -162,9 +141,6 @@ function Landing() {
             </div>
           </div>
         </section>
-
-        {/* Partners Section - Full Width */}
-        <PartnersCarousel />
       </main>
     </div>
   );
