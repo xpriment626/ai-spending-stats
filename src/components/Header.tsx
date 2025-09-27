@@ -13,39 +13,43 @@ const Header: React.FC = () => {
       <div className="flex justify-center items-center gap-3 mb-4">
         <motion.div
           animate={{
-            rotate: [0, 5, -5, 0],
+            rotate: [0, 2, -2, 0],
           }}
           transition={{
-            duration: 2,
+            duration: 3,
             repeat: Infinity,
             repeatType: "reverse"
           }}
-          className="p-3 bg-gradient-to-br from-blue-500 to-purple-600 rounded-2xl shadow-lg"
+          className="p-2 rounded-2xl"
         >
-          <Brain className="w-8 h-8 text-white" />
+          <img
+            src="/assets/arasaka-logo.png"
+            alt="Arasaka Labs"
+            className="w-12 h-12"
+          />
         </motion.div>
-        <h1 className="text-4xl lg:text-5xl font-bold gradient-text">
-          Enterprise AI Spending
+        <h1 className="text-4xl lg:text-5xl font-bold text-white">
+          <span className="netrunner-text-accent">AI Acceleration</span> Gap Analysis
         </h1>
       </div>
 
-      <p className="text-lg text-gray-600 max-w-3xl mx-auto mb-6">
-        Understanding AI's economic impact across industries, regions, and company sizes.
-        Real-time insights into the $632B enterprise AI market transformation.
+      <p className="text-lg text-neutral-300 max-w-3xl mx-auto mb-6">
+        Analyzing the growing disconnect between AI tooling acceleration and enterprise implementation success.
+        Data-driven insights into the $154B service opportunity created by this fundamental mismatch.
       </p>
 
-      <div className="flex justify-center items-center gap-8 text-sm text-gray-500">
+      <div className="flex justify-center items-center gap-8 text-sm text-neutral-400">
         <div className="flex items-center gap-2">
-          <TrendingUp className="w-4 h-4" />
-          <span>29% CAGR</span>
+          <TrendingUp className="w-4 h-4 text-blue-400" />
+          <span>97% YoY Growth</span>
         </div>
         <div className="flex items-center gap-2">
-          <Globe className="w-4 h-4" />
-          <span>Global Coverage</span>
+          <Globe className="w-4 h-4 text-pink-400" />
+          <span>78% Implementation Gap</span>
         </div>
         <div className="flex items-center gap-2">
-          <Brain className="w-4 h-4" />
-          <span>8 Industries</span>
+          <Brain className="w-4 h-4 text-cyan-400" />
+          <span>19% Success Rate</span>
         </div>
       </div>
     </motion.div>
