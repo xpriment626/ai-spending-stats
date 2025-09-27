@@ -41,19 +41,19 @@ const RegionalMap: React.FC<RegionalMapProps> = ({ data }) => {
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.6, delay: 0.2 }}
-      className="card"
+      className="bg-black/90 backdrop-blur-sm rounded-xl shadow-2xl border border-gray-700/50 p-6"
     >
       <div className="mb-6">
-        <h2 className="text-xl font-bold text-gray-800 mb-2">
+        <h2 className="text-xl font-bold text-gray-100 mb-2">
           Global AI Spending Distribution
         </h2>
-        <p className="text-gray-600 text-sm">
+        <p className="text-gray-300 text-sm">
           Enterprise AI investment by region and adoption rates
         </p>
       </div>
 
       {/* Simplified World Map */}
-      <div className="relative bg-gradient-to-br from-blue-50 to-indigo-100 rounded-xl p-8 mb-6" style={{ height: '400px' }}>
+      <div className="relative bg-gradient-to-br from-gray-900/80 to-black/90 rounded-xl p-8 mb-6" style={{ height: '400px' }}>
         {/* Continent outlines (simplified) */}
         <svg className="absolute inset-0 w-full h-full" viewBox="0 0 100 100">
           {/* North America */}
@@ -108,12 +108,12 @@ const RegionalMap: React.FC<RegionalMapProps> = ({ data }) => {
               <motion.div
                 initial={{ scale: 0 }}
                 animate={{ scale: selectedRegion === region ? 1 : 0 }}
-                className="absolute top-8 left-1/2 transform -translate-x-1/2 bg-white/95 backdrop-blur-sm p-3 rounded-lg shadow-xl border border-white/20 whitespace-nowrap z-10"
+                className="absolute top-8 left-1/2 transform -translate-x-1/2 bg-black/95 backdrop-blur-sm p-3 rounded-lg shadow-xl border border-gray-600/40 whitespace-nowrap z-10"
               >
-                <div className="text-sm font-semibold text-gray-800">
+                <div className="text-sm font-semibold text-gray-100">
                   {region.country || region.region}
                 </div>
-                <div className="text-xs text-gray-600 space-y-1">
+                <div className="text-xs text-gray-300 space-y-1">
                   <div className="flex items-center gap-1">
                     <MapPin className="w-3 h-3" />
                     <span>${region.spending}B spending</span>
@@ -141,10 +141,10 @@ const RegionalMap: React.FC<RegionalMapProps> = ({ data }) => {
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.5 + index * 0.1 }}
-            className="bg-white/50 backdrop-blur-sm rounded-lg p-4 border border-white/20"
+            className="bg-gray-900/60 backdrop-blur-sm rounded-lg p-4 border border-gray-600/40"
           >
             <div className="flex items-center justify-between mb-2">
-              <h3 className="font-semibold text-gray-800 text-sm">
+              <h3 className="font-semibold text-gray-100 text-sm">
                 {region.country || region.region}
               </h3>
               <div className={`w-3 h-3 rounded-full ${getSpendingLevel(region.spending).color}`} />
@@ -152,7 +152,7 @@ const RegionalMap: React.FC<RegionalMapProps> = ({ data }) => {
             <div className="text-lg font-bold text-blue-600">
               ${region.spending}B
             </div>
-            <div className="text-xs text-gray-500 mt-1">
+            <div className="text-xs text-gray-400 mt-1">
               {region.adoptionRate}% enterprise adoption
             </div>
           </motion.div>
@@ -160,27 +160,27 @@ const RegionalMap: React.FC<RegionalMapProps> = ({ data }) => {
       </div>
 
       {/* Legend */}
-      <div className="mt-6 pt-4 border-t border-gray-100">
-        <div className="flex items-center justify-center gap-6 text-xs">
+      <div className="mt-6 pt-4 border-t border-gray-600/40">
+        <div className="flex items-center justify-center gap-6 text-xs text-gray-300">
           <div className="flex items-center gap-2">
             <div className="w-3 h-3 rounded-full bg-red-500" />
-            <span>$200B+ spending</span>
+            <span className="text-gray-300">$200B+ spending</span>
           </div>
           <div className="flex items-center gap-2">
             <div className="w-3 h-3 rounded-full bg-orange-500" />
-            <span>$50-200B</span>
+            <span className="text-gray-300">$50-200B</span>
           </div>
           <div className="flex items-center gap-2">
             <div className="w-3 h-3 rounded-full bg-yellow-500" />
-            <span>$20-50B</span>
+            <span className="text-gray-300">$20-50B</span>
           </div>
           <div className="flex items-center gap-2">
             <div className="w-3 h-3 rounded-full bg-green-500" />
-            <span>$10-20B</span>
+            <span className="text-gray-300">$10-20B</span>
           </div>
           <div className="flex items-center gap-2">
             <div className="w-3 h-3 rounded-full bg-blue-500" />
-            <span>&lt;$10B</span>
+            <span className="text-gray-300">&lt;$10B</span>
           </div>
         </div>
       </div>
