@@ -7,29 +7,29 @@ import { NetrunnerBackground } from '../components/NetrunnerBackground';
 const tabsData: TabContent[] = [
   {
     id: 'paradox',
-    label: '{the paradox}',
-    title: 'The $154B AI Investment Paradox',
+    label: 'the paradox',
+    title: 'The $154B AI spending paradox',
     content: [
-      'Enterprise AI spending reaches $154.2B in 2024 with 97% year-over-year growth, yet only 19% of companies achieve meaningful revenue impact from their AI investments.',
+      'Enterprise AI spending reached $154.2B in 2024 with 97% year-over-year growth, yet only 19% of companies achieve meaningful revenue impact from their AI investments.',
       'This creates the largest service opportunity in enterprise technology: bridging the acceleration gap between AI tooling availability and successful implementation. The faster AI evolves, the wider this gap becomes.'
     ]
   },
   {
     id: 'thesis',
-    label: '{our thesis}',
-    title: 'High-Touch Services Fill the Gap',
+    label: 'our thesis',
+    title: 'High-touch services fill the gap',
     content: [
-      'While AI infrastructure scales exponentially, human organizations adapt linearly. This fundamental mismatch creates a persistent 78% implementation gap across enterprises.',
-      'Forward-deployed engineering services that combine deep technical expertise with implementation methodology can compress time-to-value from 24 months to 11 months while achieving 3.5x higher success rates.'
+      'Decentralized AI platforms possess structural advantages that centralized players cannot replicate: data sovereignty, permissionless innovation, and transparent compute allocation.',
+      'The deployment gap between crypto-native technical capability and enterprise implementation requirements creates systematic revenue opportunities for companies that can bridge both worlds. This window closes as enterprise procurement matures and competitive dynamics stabilize.'
     ]
   },
   {
     id: 'numbers',
-    label: '{the numbers}',
-    title: 'Multi-Billion Dollar Service Opportunity',
+    label: 'methodology',
+    title: 'What we do',
     content: [
-      'Financial Services enterprises show 92% opportunity score with only 15% implementation success. Healthcare follows at 89% opportunity score with 18% success rate.',
-      'The math is clear: high spending + low success = high service demand. Service-assisted implementations achieve 78% success rates vs. 22% for DIY approaches, creating a multi-billion dollar addressable market.'
+      'Forward-deployed engineering combined with evidence mining transforms crypto hype into measurable revenue through systematic customer problem validation and iterative deployment cycles.',
+      'Service-guided implementations achieve 4x higher customer retention than self-deployment approaches, creating sustainable revenue streams from platform companies ready to move beyond fundraising into sustainable business models.'
     ]
   }
 ];
@@ -105,47 +105,49 @@ function Landing() {
               </motion.div>
 
               {/* Tab Content */}
-              <AnimatePresence mode="wait">
-                <motion.div
-                  key={activeTab}
-                  initial={{ opacity: 0, x: 20 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  exit={{ opacity: 0, x: -20 }}
-                  transition={{ duration: 0.4 }}
-                  className="space-y-8"
-                >
-                  <h2 className="text-2xl font-semibold text-white mb-6">
-                    {activeTabData.title}
-                  </h2>
+              <div className="min-h-[240px] md:min-h-[260px]">
+                <AnimatePresence mode="wait">
+                  <motion.div
+                    key={activeTab}
+                    initial={{ opacity: 0, x: 20 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    exit={{ opacity: 0, x: -20 }}
+                    transition={{ duration: 0.4 }}
+                    className="space-y-8"
+                  >
+                    <h2 className="text-2xl font-semibold text-white mb-6">
+                      {activeTabData.title}
+                    </h2>
 
-                  <div className="space-y-4 max-w-3xl">
-                    {activeTabData.content.map((paragraph, index) => (
-                      <motion.p
-                        key={index}
-                        className="text-base text-neutral-300 leading-relaxed"
-                        initial={{ opacity: 0, y: 10 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.4, delay: index * 0.1 }}
-                      >
-                        {paragraph}
-                      </motion.p>
-                    ))}
-                  </div>
-                </motion.div>
-              </AnimatePresence>
-
-              {/* Contact Button - Outside of tab content to prevent re-rendering */}
-              <motion.button
-                className="mt-6 netrunner-button text-white px-8 py-4 rounded-lg font-medium"
-                initial={{ opacity: 0, y: 10 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.5 }}
-                whileHover={{ scale: 1.02 }}
-                whileTap={{ scale: 0.98 }}
-              >
-                Contact Us
-              </motion.button>
+                    <div className="space-y-4 max-w-3xl">
+                      {activeTabData.content.map((paragraph, index) => (
+                        <motion.p
+                          key={index}
+                          className="text-base text-neutral-300 leading-relaxed"
+                          initial={{ opacity: 0, y: 10 }}
+                          animate={{ opacity: 1, y: 0 }}
+                          transition={{ duration: 0.4, delay: index * 0.1 }}
+                        >
+                          {paragraph}
+                        </motion.p>
+                      ))}
+                    </div>
+                  </motion.div>
+                </AnimatePresence>
+              </div>
             </motion.div>
+
+            {/* Contact Button - Outside of tab content to prevent re-rendering */}
+            <motion.button
+              className="mt-8 netrunner-button text-white px-8 py-4 rounded-lg font-medium"
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.5 }}
+              whileHover={{ scale: 1.02 }}
+              whileTap={{ scale: 0.98 }}
+            >
+              Contact Us
+            </motion.button>
           </div>
         </section>
       </main>
