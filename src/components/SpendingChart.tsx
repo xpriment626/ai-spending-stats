@@ -11,14 +11,14 @@ const SpendingChart: React.FC<SpendingChartProps> = ({ data }) => {
   const CustomTooltip = ({ active, payload, label }: any) => {
     if (active && payload && payload.length) {
       return (
-        <div className="bg-white/95 backdrop-blur-sm p-4 rounded-lg shadow-xl border border-white/20">
-          <p className="font-semibold text-gray-800 mb-2">{`Year: ${label}`}</p>
+        <div className="bg-black/95 backdrop-blur-sm p-4 rounded-lg shadow-xl border border-gray-600/40">
+          <p className="font-semibold text-gray-100 mb-2">{`Year: ${label}`}</p>
           {payload.map((entry: any, index: number) => (
             <p key={index} className="text-sm" style={{ color: entry.color }}>
               {`${entry.name}: $${entry.value}B`}
             </p>
           ))}
-          <p className="text-xs text-gray-500 mt-2">
+          <p className="text-xs text-gray-400 mt-2">
             Growth: +{data.find(d => d.year === label)?.growth.toFixed(1)}%
           </p>
         </div>
@@ -32,13 +32,13 @@ const SpendingChart: React.FC<SpendingChartProps> = ({ data }) => {
       initial={{ opacity: 0, scale: 0.95 }}
       animate={{ opacity: 1, scale: 1 }}
       transition={{ duration: 0.6 }}
-      className="card"
+      className="bg-black/90 backdrop-blur-sm rounded-xl shadow-2xl border border-gray-700/50 p-6"
     >
       <div className="mb-6">
-        <h2 className="text-xl font-bold text-gray-800 mb-2">
+        <h2 className="text-xl font-bold text-gray-100 mb-2">
           Enterprise AI Spending Growth
         </h2>
-        <p className="text-gray-600 text-sm">
+        <p className="text-gray-300 text-sm">
           Global enterprise AI investment trajectory (2020-2028)
         </p>
       </div>
@@ -56,15 +56,15 @@ const SpendingChart: React.FC<SpendingChartProps> = ({ data }) => {
                 <stop offset="95%" stopColor="#10B981" stopOpacity={0.05}/>
               </linearGradient>
             </defs>
-            <CartesianGrid strokeDasharray="3 3" stroke="#E5E7EB" />
+            <CartesianGrid strokeDasharray="3 3" stroke="#4B5563" />
             <XAxis
               dataKey="year"
-              stroke="#6B7280"
+              stroke="#9CA3AF"
               fontSize={12}
               tickLine={false}
             />
             <YAxis
-              stroke="#6B7280"
+              stroke="#9CA3AF"
               fontSize={12}
               tickLine={false}
               tickFormatter={(value) => `$${value}B`}
@@ -90,18 +90,18 @@ const SpendingChart: React.FC<SpendingChartProps> = ({ data }) => {
         </ResponsiveContainer>
       </div>
 
-      <div className="grid grid-cols-3 gap-4 mt-6 pt-4 border-t border-gray-100">
+      <div className="grid grid-cols-3 gap-4 mt-6 pt-4 border-t border-gray-600/40">
         <div className="text-center">
           <div className="text-lg font-bold text-blue-600">$632B</div>
-          <div className="text-xs text-gray-500">2028 Forecast</div>
+          <div className="text-xs text-gray-400">2028 Forecast</div>
         </div>
         <div className="text-center">
           <div className="text-lg font-bold text-green-600">29%</div>
-          <div className="text-xs text-gray-500">CAGR 2024-28</div>
+          <div className="text-xs text-gray-400">CAGR 2024-28</div>
         </div>
         <div className="text-center">
           <div className="text-lg font-bold text-purple-600">96.7%</div>
-          <div className="text-xs text-gray-500">2024 Growth</div>
+          <div className="text-xs text-gray-400">2024 Growth</div>
         </div>
       </div>
     </motion.div>

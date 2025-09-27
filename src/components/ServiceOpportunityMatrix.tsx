@@ -43,26 +43,26 @@ const ServiceOpportunityMatrix: React.FC<ServiceOpportunityMatrixProps> = ({ opp
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.6, delay: 0.3 }}
-      className="card"
+      className="bg-black/90 backdrop-blur-sm rounded-xl shadow-2xl border border-gray-700/50 p-6"
     >
       <div className="mb-6">
         <div className="flex items-center justify-between mb-4">
           <div>
-            <h2 className="text-xl font-bold text-gray-800 mb-2">
+            <h2 className="text-xl font-bold text-gray-100 mb-2">
               AI Services Market Opportunity
             </h2>
-            <p className="text-gray-600 text-sm">
+            <p className="text-gray-300 text-sm">
               High spending + Low implementation success = High service opportunity
             </p>
           </div>
 
-          <div className="flex bg-gray-100 rounded-lg p-1">
+          <div className="flex bg-gray-800/60 rounded-lg p-1">
             <button
               onClick={() => setActiveView('gaps')}
               className={`px-4 py-2 rounded-md text-sm font-medium transition-all ${
                 activeView === 'gaps'
-                  ? 'bg-white shadow-sm text-gray-900'
-                  : 'text-gray-600 hover:text-gray-900'
+                  ? 'bg-gray-700 shadow-sm text-gray-100'
+                  : 'text-gray-300 hover:text-gray-100'
               }`}
             >
               Implementation Gaps
@@ -71,8 +71,8 @@ const ServiceOpportunityMatrix: React.FC<ServiceOpportunityMatrixProps> = ({ opp
               onClick={() => setActiveView('matrix')}
               className={`px-4 py-2 rounded-md text-sm font-medium transition-all ${
                 activeView === 'matrix'
-                  ? 'bg-white shadow-sm text-gray-900'
-                  : 'text-gray-600 hover:text-gray-900'
+                  ? 'bg-gray-700 shadow-sm text-gray-100'
+                  : 'text-gray-300 hover:text-gray-100'
               }`}
             >
               Opportunity Matrix
@@ -94,9 +94,9 @@ const ServiceOpportunityMatrix: React.FC<ServiceOpportunityMatrixProps> = ({ opp
             <div className="mb-6">
               <div className="grid grid-cols-4 gap-2 mb-4">
                 {/* Header */}
-                <div className="text-xs font-medium text-gray-500 p-2">Sector / Size</div>
+                <div className="text-xs font-medium text-gray-400 p-2">Sector / Size</div>
                 {companySizes.map(size => (
-                  <div key={size} className="text-xs font-medium text-gray-500 p-2 text-center">
+                  <div key={size} className="text-xs font-medium text-gray-400 p-2 text-center">
                     {size.split(' ')[0]}
                   </div>
                 ))}
@@ -104,7 +104,7 @@ const ServiceOpportunityMatrix: React.FC<ServiceOpportunityMatrixProps> = ({ opp
                 {/* Matrix cells */}
                 {sectors.map(sector => (
                   <React.Fragment key={sector}>
-                    <div className="text-xs font-medium text-gray-700 p-2 bg-gray-50 rounded-md">
+                    <div className="text-xs font-medium text-gray-200 p-2 bg-gray-800/60 rounded-md">
                       {sector}
                     </div>
                     {companySizes.map(size => {
@@ -165,11 +165,11 @@ const ServiceOpportunityMatrix: React.FC<ServiceOpportunityMatrixProps> = ({ opp
                   initial={{ opacity: 0, height: 0 }}
                   animate={{ opacity: 1, height: 'auto' }}
                   exit={{ opacity: 0, height: 0 }}
-                  className="bg-gradient-to-r from-blue-50 to-purple-50 rounded-lg p-4 border border-blue-100"
+                  className="bg-gradient-to-r from-gray-900/80 to-gray-800/80 rounded-lg p-4 border border-gray-600/40"
                 >
                   <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
                     <div>
-                      <h3 className="font-semibold text-gray-800 mb-2">
+                      <h3 className="font-semibold text-gray-100 mb-2">
                         {selectedOpportunity.sector} • {selectedOpportunity.companySize}
                       </h3>
                       <div className="space-y-1 text-sm">
@@ -189,12 +189,12 @@ const ServiceOpportunityMatrix: React.FC<ServiceOpportunityMatrixProps> = ({ opp
                     </div>
 
                     <div className="md:col-span-2">
-                      <h4 className="font-medium text-gray-700 mb-2">Key Implementation Challenges:</h4>
+                      <h4 className="font-medium text-gray-200 mb-2">Key Implementation Challenges:</h4>
                       <div className="flex flex-wrap gap-2">
                         {selectedOpportunity.challenges.map((challenge, index) => (
                           <span
                             key={index}
-                            className="px-3 py-1 bg-white/70 rounded-full text-xs text-gray-700 border border-gray-200"
+                            className="px-3 py-1 bg-gray-800/70 rounded-full text-xs text-gray-200 border border-gray-600/40"
                           >
                             {challenge}
                           </span>
@@ -222,18 +222,18 @@ const ServiceOpportunityMatrix: React.FC<ServiceOpportunityMatrixProps> = ({ opp
                   initial={{ opacity: 0, y: 10 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: index * 0.1 }}
-                  className="bg-white/50 backdrop-blur-sm rounded-lg p-4 border border-white/20"
+                  className="bg-gray-900/60 backdrop-blur-sm rounded-lg p-4 border border-gray-600/40"
                 >
                   <div className="flex items-center justify-between mb-3">
                     <div className="flex items-center gap-3">
-                      <h3 className="font-medium text-gray-800">{gap.metric}</h3>
+                      <h3 className="font-medium text-gray-100">{gap.metric}</h3>
                       {getGapTrendIcon(gap.trend)}
                     </div>
                     <div className="text-right">
                       <div className="text-lg font-bold text-red-600">
                         {gap.gapSize}% gap
                       </div>
-                      <div className="text-xs text-gray-500 capitalize">
+                      <div className="text-xs text-gray-400 capitalize">
                         {gap.trend}
                       </div>
                     </div>
@@ -241,48 +241,48 @@ const ServiceOpportunityMatrix: React.FC<ServiceOpportunityMatrixProps> = ({ opp
 
                   {/* Gap visualization */}
                   <div className="mb-3">
-                    <div className="flex items-center justify-between text-xs text-gray-600 mb-1">
+                    <div className="flex items-center justify-between text-xs text-gray-300 mb-1">
                       <span>Investment Level</span>
                       <span>Realization Level</span>
                     </div>
                     <div className="relative">
-                      <div className="h-3 bg-gray-200 rounded-full overflow-hidden">
+                      <div className="h-3 bg-gray-700 rounded-full overflow-hidden">
                         <div
                           className="h-full bg-blue-500 rounded-full"
                           style={{ width: `${gap.investmentLevel}%` }}
                         />
                       </div>
-                      <div className="h-3 bg-gray-200 rounded-full overflow-hidden mt-1">
+                      <div className="h-3 bg-gray-700 rounded-full overflow-hidden mt-1">
                         <div
                           className="h-full bg-green-500 rounded-full"
                           style={{ width: `${gap.realizationLevel}%` }}
                         />
                       </div>
                     </div>
-                    <div className="flex justify-between text-xs text-gray-500 mt-1">
+                    <div className="flex justify-between text-xs text-gray-400 mt-1">
                       <span>{gap.investmentLevel}%</span>
                       <span>{gap.realizationLevel}%</span>
                     </div>
                   </div>
 
-                  <p className="text-sm text-gray-600">{gap.description}</p>
+                  <p className="text-sm text-gray-300">{gap.description}</p>
                 </motion.div>
               ))}
             </div>
 
             {/* Summary stats */}
             <div className="mt-6 grid grid-cols-1 md:grid-cols-3 gap-4">
-              <div className="text-center bg-red-50 rounded-lg p-4">
+              <div className="text-center bg-red-900/30 rounded-lg p-4 border border-red-700/30">
                 <div className="text-2xl font-bold text-red-600">78%</div>
-                <div className="text-sm text-gray-600">Average Implementation Gap</div>
+                <div className="text-sm text-gray-300">Average Implementation Gap</div>
               </div>
-              <div className="text-center bg-orange-50 rounded-lg p-4">
+              <div className="text-center bg-orange-900/30 rounded-lg p-4 border border-orange-700/30">
                 <div className="text-2xl font-bold text-orange-600">Multi-Billion</div>
-                <div className="text-sm text-gray-600">Total Service Opportunity</div>
+                <div className="text-sm text-gray-300">Total Service Opportunity</div>
               </div>
-              <div className="text-center bg-green-50 rounded-lg p-4">
+              <div className="text-center bg-green-900/30 rounded-lg p-4 border border-green-700/30">
                 <div className="text-2xl font-bold text-green-600">46%</div>
-                <div className="text-sm text-gray-600">Cite Talent Gaps</div>
+                <div className="text-sm text-gray-300">Cite Talent Gaps</div>
               </div>
             </div>
           </motion.div>

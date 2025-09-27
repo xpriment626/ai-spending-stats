@@ -47,20 +47,20 @@ const Timeline: React.FC<TimelineProps> = ({ events }) => {
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.6, delay: 0.3 }}
-      className="card"
+      className="bg-black/90 backdrop-blur-sm rounded-xl shadow-2xl border border-gray-700/50 p-6"
     >
       <div className="mb-6">
-        <h2 className="text-xl font-bold text-gray-800 mb-2">
+        <h2 className="text-xl font-bold text-gray-100 mb-2">
           AI Development Timeline
         </h2>
-        <p className="text-gray-600 text-sm">
+        <p className="text-gray-300 text-sm">
           Key milestones, funding rounds, and regulatory developments
         </p>
       </div>
 
       <div className="relative">
         {/* Timeline line */}
-        <div className="absolute left-8 top-0 bottom-0 w-0.5 bg-gradient-to-b from-blue-200 via-purple-200 to-green-200" />
+        <div className="absolute left-8 top-0 bottom-0 w-0.5 bg-gradient-to-b from-blue-400 via-purple-400 to-green-400" />
 
         <div className="space-y-6">
           {events.map((event, index) => (
@@ -82,22 +82,22 @@ const Timeline: React.FC<TimelineProps> = ({ events }) => {
 
               {/* Content */}
               <motion.div
-                className="flex-1 bg-white/50 backdrop-blur-sm rounded-lg p-4 border border-white/20 hover:shadow-md transition-all cursor-pointer"
+                className="flex-1 bg-gray-900/60 backdrop-blur-sm rounded-lg p-4 border border-gray-600/40 hover:shadow-md transition-all cursor-pointer"
                 whileHover={{ scale: 1.02 }}
                 onClick={() => setSelectedEvent(selectedEvent === event ? null : event)}
               >
                 <div className="flex items-start justify-between mb-2">
                   <div>
-                    <h3 className="font-semibold text-gray-800 text-sm">
+                    <h3 className="font-semibold text-gray-100 text-sm">
                       {event.title}
                     </h3>
-                    <div className="flex items-center gap-2 text-xs text-gray-500 mt-1">
+                    <div className="flex items-center gap-2 text-xs text-gray-400 mt-1">
                       <Calendar className="w-3 h-3" />
                       <span>{formatDate(event)}</span>
                       {event.value && (
                         <>
                           <span>•</span>
-                          <span className="font-medium text-green-600">
+                          <span className="font-medium text-green-400">
                             ${event.value}B
                           </span>
                         </>
@@ -115,7 +115,7 @@ const Timeline: React.FC<TimelineProps> = ({ events }) => {
                       initial={{ opacity: 0, height: 0 }}
                       animate={{ opacity: 1, height: 'auto' }}
                       exit={{ opacity: 0, height: 0 }}
-                      className="text-sm text-gray-600 mt-2 pt-2 border-t border-gray-100"
+                      className="text-sm text-gray-300 mt-2 pt-2 border-t border-gray-600/40"
                     >
                       {event.description}
                     </motion.p>
@@ -128,7 +128,7 @@ const Timeline: React.FC<TimelineProps> = ({ events }) => {
       </div>
 
       {/* Legend */}
-      <div className="mt-8 pt-6 border-t border-gray-100">
+      <div className="mt-8 pt-6 border-t border-gray-600/40">
         <div className="flex flex-wrap gap-4 justify-center">
           {[
             { type: 'milestone', label: 'Milestones', color: 'bg-purple-500' },
@@ -138,7 +138,7 @@ const Timeline: React.FC<TimelineProps> = ({ events }) => {
           ].map((item) => (
             <div key={item.type} className="flex items-center gap-2">
               <div className={`w-3 h-3 rounded-full ${item.color}`} />
-              <span className="text-xs text-gray-600">{item.label}</span>
+              <span className="text-xs text-gray-300">{item.label}</span>
             </div>
           ))}
         </div>
