@@ -29,20 +29,20 @@ const KeyMetrics: React.FC<KeyMetricsProps> = ({ metrics: _ }) => {
     if (isInvestment) {
       switch (trend) {
         case 'up':
-          return 'text-blue-600 bg-blue-50';
+          return 'text-blue-300 bg-blue-500/20';
         case 'down':
-          return 'text-blue-600 bg-blue-50';
+          return 'text-blue-300 bg-blue-500/20';
         default:
-          return 'text-blue-600 bg-blue-50';
+          return 'text-blue-300 bg-blue-500/20';
       }
     }
     switch (trend) {
       case 'up':
-        return 'text-red-600 bg-red-50';
+        return 'text-red-300 bg-red-500/20';
       case 'down':
-        return 'text-red-600 bg-red-50';
+        return 'text-red-300 bg-red-500/20';
       default:
-        return 'text-red-600 bg-red-50';
+        return 'text-red-300 bg-red-500/20';
     }
   };
 
@@ -104,38 +104,38 @@ const KeyMetrics: React.FC<KeyMetricsProps> = ({ metrics: _ }) => {
   return (
     <div className="mb-8">
       {/* Section Header */}
-      <div className="text-center mb-6">
+      <div className="text-center mb-8">
         <h2 className="text-2xl font-bold text-white mb-2">Investment vs. Reality</h2>
         <p className="text-neutral-300">The disconnect between AI spending and successful outcomes</p>
       </div>
 
-      <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+      <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
         {metricPairs.map((pair, index) => (
           <motion.div
             key={`${pair.investment.title}-${pair.reality.title}`}
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: index * 0.1, duration: 0.5 }}
-            className="card relative overflow-hidden"
+            className="vercel-content-card p-6 relative overflow-hidden"
           >
             {/* Gap Indicator */}
             {pair.gapPercentage && (
-              <div className="absolute top-4 right-4 flex items-center gap-1 px-2 py-1 bg-yellow-100 rounded-full text-xs font-medium text-yellow-700">
+              <div className="absolute top-4 right-4 flex items-center gap-1 px-2 py-1 bg-yellow-500/20 rounded-full text-xs font-medium text-yellow-300 border border-yellow-500/30">
                 <AlertTriangle className="w-3 h-3" />
                 <span>{pair.gapPercentage}% gap</span>
               </div>
             )}
 
             {/* Investment Metric */}
-            <div className="bg-gradient-to-r from-blue-50 to-blue-100 rounded-lg p-4 mb-3 border border-blue-200">
+            <div className="bg-gradient-to-r from-blue-500/10 to-indigo-500/10 rounded-lg p-4 mb-3 border border-blue-500/30">
               <div className="flex items-center gap-2 mb-2">
-                <DollarSign className="w-4 h-4 text-blue-600" />
-                <h3 className="text-sm font-medium text-blue-800">
+                <DollarSign className="w-4 h-4 text-blue-400" />
+                <h3 className="text-sm font-medium text-blue-300">
                   {pair.investment.title}
                 </h3>
               </div>
               <div className="flex items-center justify-between">
-                <div className="text-2xl font-bold text-blue-900">
+                <div className="text-2xl font-bold text-blue-100">
                   {pair.investment.value}
                 </div>
                 <div className={`flex items-center gap-1 px-2 py-1 rounded-full text-xs font-medium ${getTrendColor(pair.investment.trend, true)}`}>
@@ -147,21 +147,21 @@ const KeyMetrics: React.FC<KeyMetricsProps> = ({ metrics: _ }) => {
                   )}
                 </div>
               </div>
-              <p className="text-xs text-blue-700 mt-1">
+              <p className="text-xs text-blue-300 mt-1">
                 {pair.investment.description}
               </p>
             </div>
 
             {/* Reality Metric */}
-            <div className="bg-gradient-to-r from-red-50 to-red-100 rounded-lg p-4 border border-red-200">
+            <div className="bg-gradient-to-r from-red-500/10 to-orange-500/10 rounded-lg p-4 border border-red-500/30">
               <div className="flex items-center gap-2 mb-2">
-                <AlertTriangle className="w-4 h-4 text-red-600" />
-                <h3 className="text-sm font-medium text-red-800">
+                <AlertTriangle className="w-4 h-4 text-red-400" />
+                <h3 className="text-sm font-medium text-red-300">
                   {pair.reality.title}
                 </h3>
               </div>
               <div className="flex items-center justify-between">
-                <div className="text-2xl font-bold text-red-900">
+                <div className="text-2xl font-bold text-red-100">
                   {pair.reality.value}
                 </div>
                 <div className={`flex items-center gap-1 px-2 py-1 rounded-full text-xs font-medium ${getTrendColor(pair.reality.trend)}`}>
@@ -173,7 +173,7 @@ const KeyMetrics: React.FC<KeyMetricsProps> = ({ metrics: _ }) => {
                   )}
                 </div>
               </div>
-              <p className="text-xs text-red-700 mt-1">
+              <p className="text-xs text-red-300 mt-1">
                 {pair.reality.description}
               </p>
             </div>
@@ -186,12 +186,12 @@ const KeyMetrics: React.FC<KeyMetricsProps> = ({ metrics: _ }) => {
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.4, duration: 0.5 }}
-        className="mt-6 text-center p-4 bg-yellow-50 rounded-lg border border-yellow-200"
+        className="mt-6 text-center p-4 bg-yellow-500/20 rounded-lg border border-yellow-500/30"
       >
-        <p className="text-yellow-800 font-medium">
+        <p className="text-yellow-300 font-medium">
           Despite massive investment growth, successful AI implementation remains stagnant —
           creating a {' '}
-          <span className="font-bold text-yellow-900">multi-billion dollar service opportunity</span>
+          <span className="font-bold text-yellow-100">multi-billion dollar service opportunity</span>
         </p>
       </motion.div>
     </div>
