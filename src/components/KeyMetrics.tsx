@@ -105,8 +105,8 @@ const KeyMetrics: React.FC<KeyMetricsProps> = ({ metrics: _ }) => {
     <div className="mb-8">
       {/* Section Header */}
       <div className="text-center mb-6">
-        <h2 className="text-2xl font-bold text-gray-800 mb-2">Investment vs. Reality</h2>
-        <p className="text-gray-600">The disconnect between AI spending and successful outcomes</p>
+        <h2 className="text-2xl font-bold text-white mb-2">Investment vs. Reality</h2>
+        <p className="text-neutral-300">The disconnect between AI spending and successful outcomes</p>
       </div>
 
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">

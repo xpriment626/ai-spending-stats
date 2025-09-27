@@ -51,7 +51,7 @@ const AIParadoxHero: React.FC<AIParadoxHeroProps> = ({
           initial={{ opacity: 0, x: -30 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ delay: 0.6, duration: 0.6 }}
-          className="bg-gradient-to-br from-blue-500/10 to-indigo-500/10 rounded-xl p-6 border border-blue-500/20 backdrop-blur-sm"
+          className="netrunner-card-blue rounded-xl p-6"
         >
           <div className="flex items-center gap-3 mb-4">
             <div className="p-2 bg-blue-500 rounded-lg">
@@ -75,8 +75,8 @@ const AIParadoxHero: React.FC<AIParadoxHeroProps> = ({
             </div>
           </div>
 
-          <div className="mt-4 p-3 bg-blue-100 rounded-lg">
-            <p className="text-sm text-blue-200 font-medium">
+          <div className="mt-4 p-3 bg-blue-500/20 rounded-lg border border-blue-500/30">
+            <p className="text-sm text-blue-300 font-medium">
               Organizations are investing heavily in AI infrastructure and tools
             </p>
           </div>
@@ -87,7 +87,7 @@ const AIParadoxHero: React.FC<AIParadoxHeroProps> = ({
           initial={{ opacity: 0, x: 30 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ delay: 0.8, duration: 0.6 }}
-          className="bg-gradient-to-br from-red-500/10 to-orange-500/10 rounded-xl p-6 border border-red-500/20 backdrop-blur-sm"
+          className="netrunner-card-red rounded-xl p-6"
         >
           <div className="flex items-center gap-3 mb-4">
             <div className="p-2 bg-red-500 rounded-lg">
@@ -111,8 +111,8 @@ const AIParadoxHero: React.FC<AIParadoxHeroProps> = ({
             </div>
           </div>
 
-          <div className="mt-4 p-3 bg-red-100 rounded-lg">
-            <p className="text-sm text-red-200 font-medium">
+          <div className="mt-4 p-3 bg-red-500/20 rounded-lg border border-red-500/30">
+            <p className="text-sm text-red-300 font-medium">
               Despite massive spending, most implementations fail to deliver value
             </p>
           </div>
@@ -128,8 +128,8 @@ const AIParadoxHero: React.FC<AIParadoxHeroProps> = ({
       >
         <div className="flex items-center justify-center mb-4">
           <div className="flex-1 h-px bg-gradient-to-r from-blue-400 to-transparent"></div>
-          <div className="px-4 py-2 bg-yellow-100 rounded-full border border-yellow-300">
-            <AlertTriangle className="w-5 h-5 text-yellow-600" />
+          <div className="px-4 py-2 bg-yellow-500/20 rounded-full border border-yellow-500/40 backdrop-blur-sm">
+            <AlertTriangle className="w-5 h-5 text-yellow-400" />
           </div>
           <div className="flex-1 h-px bg-gradient-to-l from-red-400 to-transparent"></div>
         </div>
@@ -144,7 +144,7 @@ const AIParadoxHero: React.FC<AIParadoxHeroProps> = ({
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 1.2, duration: 0.6 }}
-        className="bg-gradient-to-r from-purple-500/10 to-blue-500/10 rounded-xl p-6 border border-purple-500/20 backdrop-blur-sm text-center"
+        className="netrunner-card-purple rounded-xl p-6 text-center"
       >
         <div className="flex items-center justify-center gap-3 mb-4">
           <div className="p-3 bg-purple-500 rounded-lg">

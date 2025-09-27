@@ -83,4 +83,40 @@
     @apply rounded-2xl shadow-2xl;
     box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.4), 0 10px 10px -5px rgba(0, 0, 0, 0.2);
   }
+
+  /* Netrunner theme card variants */
+  .netrunner-card-blue {
+    @apply bg-gradient-to-br from-blue-500/10 to-indigo-500/10;
+    @apply border border-blue-500/20 backdrop-blur-sm;
+    box-shadow: 0 8px 32px 0 rgba(0, 112, 243, 0.1);
+  }
+
+  .netrunner-card-red {
+    @apply bg-gradient-to-br from-red-500/10 to-orange-500/10;
+    @apply border border-red-500/20 backdrop-blur-sm;
+    box-shadow: 0 8px 32px 0 rgba(239, 68, 68, 0.1);
+  }
+
+  .netrunner-card-purple {
+    @apply bg-gradient-to-r from-purple-500/10 to-blue-500/10;
+    @apply border border-purple-500/20 backdrop-blur-sm;
+    box-shadow: 0 8px 32px 0 rgba(168, 85, 247, 0.1);
+  }
+
+  /* Enhanced text contrast for dark theme */
+  .netrunner-text-blue-primary {
+    @apply text-blue-300;
+  }
+
+  .netrunner-text-blue-secondary {
+    @apply text-blue-400;
+  }
+
+  .netrunner-text-red-primary {
+    @apply text-red-300;
+  }
+
+  .netrunner-text-red-secondary {
+    @apply text-red-400;
+  }
 }

@@ -7,7 +7,7 @@ import SpendingChart from '../components/SpendingChart';
 import RegionalMap from '../components/RegionalMap';
 import IndustryBreakdown from '../components/IndustryBreakdown';
 import { mockDashboardData } from '../data/mockData';
-import { NetrunnerBackground } from '../components/NetrunnerBackground';
+// import { NetrunnerBackground } from '../components/NetrunnerBackground';
 
 function Stats() {
   const {
@@ -22,7 +22,7 @@ function Stats() {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-black via-neutral-950 to-black relative">
-      <NetrunnerBackground />
+      {/* <NetrunnerBackground /> */}
       <div className="container mx-auto px-4 py-8 max-w-7xl relative z-10">
         <Header />
 
@@ -38,7 +38,7 @@ function Stats() {
         {/* Thesis Introduction */}
         <div className="vercel-content-card p-8 mb-12 text-center">
           <h2 className="text-2xl font-bold text-white mb-4">The Acceleration Gap Thesis</h2>
-          <p className="text-lg text-neutral-300 max-w-4xl mx-auto leading-relaxed">
+          <p className="text-lg text-white max-w-4xl mx-auto leading-relaxed">
             AI tooling infrastructure evolves exponentially while enterprise implementation capabilities advance linearly.
             This fundamental mismatch creates persistent gaps between investment and outcomes, generating unprecedented
             opportunities for forward-deployed engineering services.
