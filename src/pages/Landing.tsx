@@ -56,7 +56,7 @@ function Landing() {
             <Link to="/" className="netrunner-nav-link font-medium">Home</Link>
             {/* <Link to="/blog" className="netrunner-nav-link font-medium">Blog</Link> */}
             <Link to="/thesis" className="netrunner-nav-link font-medium">Thesis</Link>
-            <Link to="/contact" className="netrunner-glass text-neutral-200 px-4 py-2 rounded-lg hover:text-white transition-all font-medium">Contact</Link>
+            <a href="https://calendly.com/emmettchilds_/shadow-office" target="_blank" rel="noopener noreferrer" className="netrunner-glass text-neutral-200 px-4 py-2 rounded-lg hover:text-white transition-all font-medium">Contact</a>
           </div>
         </nav>
       </header>
@@ -136,10 +136,12 @@ function Landing() {
                 </AnimatePresence>
               </div>
             </motion.div>
-
             {/* Contact Button - Outside of tab content to prevent re-rendering */}
-            <motion.button
-              className="mt-8 netrunner-button text-white px-8 py-4 rounded-lg font-medium"
+            <motion.a
+              href="https://calendly.com/emmettchilds_/shadow-office"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mt-8 netrunner-button text-white px-8 py-4 rounded-lg font-medium inline-block"
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.5 }}
@@ -147,7 +149,7 @@ function Landing() {
               whileTap={{ scale: 0.98 }}
             >
               Contact Us
-            </motion.button>
+            </motion.a>
           </div>
         </section>
       </main>
