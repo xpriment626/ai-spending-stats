@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import Header from '../components/Header';
 import AIParadoxHero from '../components/AIParadoxHero';
 import KeyMetrics from '../components/KeyMetrics';
@@ -23,6 +24,28 @@ function Stats() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-black via-neutral-950 to-black relative">
       {/* <NetrunnerBackground /> */}
+
+      {/* Header Navigation */}
+      <header className="flex-none px-8 py-6 relative z-10">
+        <nav className="flex justify-between items-center max-w-7xl mx-auto">
+          <div className="flex items-center">
+            <Link to="/" className="cursor-pointer">
+              <img
+                src="/assets/arasaka-logo.png"
+                alt="Arasaka Labs"
+                className="h-12 w-auto hover:opacity-80 transition-opacity"
+              />
+            </Link>
+          </div>
+          <div className="flex items-center space-x-8">
+            <Link to="/" className="netrunner-nav-link font-medium">Home</Link>
+            {/* <Link to="/blog" className="netrunner-nav-link font-medium">Blog</Link> */}
+            <Link to="/thesis" className="netrunner-nav-link font-medium text-white">Thesis</Link>
+            <Link to="/contact" className="netrunner-glass text-neutral-200 px-4 py-2 rounded-lg hover:text-white transition-all font-medium">Contact</Link>
+          </div>
+        </nav>
+      </header>
+
       <div className="container mx-auto px-4 py-8 max-w-7xl relative z-10">
         <Header />
 

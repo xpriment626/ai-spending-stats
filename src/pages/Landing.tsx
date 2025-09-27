@@ -54,8 +54,8 @@ function Landing() {
           </div>
           <div className="flex items-center space-x-8">
             <Link to="/" className="netrunner-nav-link font-medium">Home</Link>
-            <Link to="/blog" className="netrunner-nav-link font-medium">Blog</Link>
-            <Link to="/stats" className="netrunner-nav-link font-medium">Stats</Link>
+            {/* <Link to="/blog" className="netrunner-nav-link font-medium">Blog</Link> */}
+            <Link to="/thesis" className="netrunner-nav-link font-medium">Thesis</Link>
             <Link to="/contact" className="netrunner-glass text-neutral-200 px-4 py-2 rounded-lg hover:text-white transition-all font-medium">Contact</Link>
           </div>
         </nav>
