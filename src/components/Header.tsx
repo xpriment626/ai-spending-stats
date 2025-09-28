@@ -29,13 +29,13 @@ const Header: React.FC = () => {
           />
         </motion.div>
         <h1 className="text-4xl lg:text-5xl font-bold text-white">
-          <span className="netrunner-text-accent">AI Acceleration</span> Gap Analysis
+          <span className="netrunner-text-accent">AI Spending</span> Analysis
         </h1>
       </div>
 
       <p className="text-lg text-neutral-300 max-w-3xl mx-auto mb-6">
         Analyzing the growing disconnect between AI tooling acceleration and enterprise implementation success.
-        Data-driven insights into the $154B service opportunity created by this fundamental mismatch.
+        This data room offers insights into the $154B service opportunity created by this mismatch.
       </p>
 
       <div className="flex justify-center items-center gap-8 text-sm text-neutral-400">

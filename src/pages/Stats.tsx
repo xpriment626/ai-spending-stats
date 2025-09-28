@@ -60,7 +60,7 @@ function Stats() {
 
         {/* Thesis Introduction */}
         <div className="vercel-content-card p-8 mb-12 text-center">
-          <h2 className="text-2xl font-bold text-white mb-4">The Acceleration Gap Thesis</h2>
+          <h2 className="text-2xl font-bold text-white mb-4">The Deployment Gap Thesis</h2>
           <p className="text-lg text-white max-w-4xl mx-auto leading-relaxed">
             AI tooling infrastructure evolves exponentially while enterprise implementation capabilities advance linearly.
             This fundamental mismatch creates persistent gaps between investment and outcomes, generating unprecedented
@@ -119,7 +119,7 @@ function Stats() {
           <div className="max-w-4xl mx-auto space-y-4">
             <p className="text-lg text-neutral-300 leading-relaxed">
               The data reveals a clear pattern: as AI tooling accelerates exponentially, enterprise implementation
-              capabilities evolve linearly. This creates a persistent and growing gap that high-touch engineering
+              capabilities evolve linearly. This creates a persistent and growing gap that high-touch engineering and strategic
               services can profitably address.
             </p>
             <p className="text-neutral-300 leading-relaxed">

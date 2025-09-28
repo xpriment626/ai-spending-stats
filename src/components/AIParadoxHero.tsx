@@ -134,7 +134,7 @@ const AIParadoxHero: React.FC<AIParadoxHeroProps> = ({
           <div className="flex-1 h-px bg-gradient-to-l from-red-400 to-transparent"></div>
         </div>
         <div className="text-center">
-          <div className="text-2xl font-bold text-yellow-400 mb-2">{implementationGap}% Implementation Gap</div>
+          <div className="text-2xl font-bold text-yellow-400 mb-2">{implementationGap}% Deployment Gap</div>
           <p className="text-neutral-300">The disconnect between AI investment and successful outcomes</p>
         </div>
       </motion.div>
@@ -184,7 +184,7 @@ const AIParadoxHero: React.FC<AIParadoxHeroProps> = ({
         className="text-center mt-6 p-4 bg-neutral-800/30 rounded-lg border border-neutral-700/30"
       >
         <p className="text-neutral-300 font-medium">
-          The acceleration gap between AI tooling availability and enterprise implementation success
+          The gap between progress in the AI tooling ecosystem and enterprise implementation success
           creates unprecedented opportunities for forward-deployed engineering services.
         </p>
       </motion.div>
