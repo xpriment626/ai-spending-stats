@@ -22,7 +22,7 @@ const AIParadoxHero: React.FC<AIParadoxHeroProps> = ({
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.8 }}
-      className="vercel-content-card p-8 mb-8 overflow-hidden"
+      className="vercel-content-card p-4 sm:p-6 lg:p-8 mb-6 sm:mb-8 overflow-hidden"
     >
       {/* Header */}
       <div className="text-center mb-8">
@@ -30,7 +30,7 @@ const AIParadoxHero: React.FC<AIParadoxHeroProps> = ({
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.2, duration: 0.6 }}
-          className="text-3xl lg:text-4xl font-bold text-white mb-4"
+          className="text-2xl sm:text-3xl lg:text-4xl font-bold text-white mb-4"
         >
           The {totalInvestment} AI Investment Paradox
         </motion.h1>
@@ -38,40 +38,40 @@ const AIParadoxHero: React.FC<AIParadoxHeroProps> = ({
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.4, duration: 0.6 }}
-          className="text-lg text-neutral-300 max-w-3xl mx-auto"
+          className="text-sm sm:text-base lg:text-lg text-neutral-300 max-w-3xl mx-auto px-4"
         >
           Enterprise AI spending grows {yearOverYearGrowth}% annually, yet implementation success remains stagnant
         </motion.p>
       </div>
 
       {/* Split Screen Paradox */}
-      <div className="grid lg:grid-cols-2 gap-8 mb-8">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-6 lg:gap-8 mb-6 sm:mb-8">
         {/* Left Side - Investment Reality */}
         <motion.div
           initial={{ opacity: 0, x: -30 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ delay: 0.6, duration: 0.6 }}
-          className="netrunner-card-blue rounded-xl p-6"
+          className="netrunner-card-blue rounded-xl p-4 sm:p-6"
         >
           <div className="flex items-center gap-3 mb-4">
             <div className="p-2 bg-blue-500 rounded-lg">
               <TrendingUp className="w-6 h-6 text-white" />
             </div>
-            <h3 className="text-xl font-bold text-blue-400">Massive Investment</h3>
+            <h3 className="text-lg sm:text-xl font-bold text-blue-400">Massive Investment</h3>
           </div>
 
           <div className="space-y-4">
             <div className="flex justify-between items-center">
               <span className="text-blue-300 font-medium">2024 Enterprise AI Spending</span>
-              <span className="text-2xl font-bold text-blue-100">{totalInvestment}</span>
+              <span className="text-xl sm:text-2xl font-bold text-blue-100">{totalInvestment}</span>
             </div>
             <div className="flex justify-between items-center">
               <span className="text-blue-300 font-medium">Year-over-Year Growth</span>
-              <span className="text-xl font-bold text-blue-100">+{yearOverYearGrowth}%</span>
+              <span className="text-lg sm:text-xl font-bold text-blue-100">+{yearOverYearGrowth}%</span>
             </div>
             <div className="flex justify-between items-center">
               <span className="text-blue-300 font-medium">Enterprise Adoption Rate</span>
-              <span className="text-xl font-bold text-blue-100">78%</span>
+              <span className="text-lg sm:text-xl font-bold text-blue-100">78%</span>
             </div>
           </div>
 
@@ -87,27 +87,27 @@ const AIParadoxHero: React.FC<AIParadoxHeroProps> = ({
           initial={{ opacity: 0, x: 30 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ delay: 0.8, duration: 0.6 }}
-          className="netrunner-card-red rounded-xl p-6"
+          className="netrunner-card-red rounded-xl p-4 sm:p-6"
         >
           <div className="flex items-center gap-3 mb-4">
             <div className="p-2 bg-red-500 rounded-lg">
               <TrendingDown className="w-6 h-6 text-white" />
             </div>
-            <h3 className="text-xl font-bold text-red-400">Poor Outcomes</h3>
+            <h3 className="text-lg sm:text-xl font-bold text-red-400">Poor Outcomes</h3>
           </div>
 
           <div className="space-y-4">
             <div className="flex justify-between items-center">
               <span className="text-red-300 font-medium">Revenue Impact &gt;5%</span>
-              <span className="text-2xl font-bold text-red-100">{revenueImpactFailure}%</span>
+              <span className="text-xl sm:text-2xl font-bold text-red-100">{revenueImpactFailure}%</span>
             </div>
             <div className="flex justify-between items-center">
               <span className="text-red-300 font-medium">Implementation Gap</span>
-              <span className="text-xl font-bold text-red-100">{implementationGap}%</span>
+              <span className="text-lg sm:text-xl font-bold text-red-100">{implementationGap}%</span>
             </div>
             <div className="flex justify-between items-center">
               <span className="text-red-300 font-medium">See Earnings Benefits</span>
-              <span className="text-xl font-bold text-red-100">20%</span>
+              <span className="text-lg sm:text-xl font-bold text-red-100">20%</span>
             </div>
           </div>
 
@@ -144,27 +144,27 @@ const AIParadoxHero: React.FC<AIParadoxHeroProps> = ({
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 1.2, duration: 0.6 }}
-        className="netrunner-card-purple rounded-xl p-6 text-center"
+        className="netrunner-card-purple rounded-xl p-4 sm:p-6 text-center"
       >
         <div className="flex items-center justify-center gap-3 mb-4">
           <div className="p-3 bg-purple-500 rounded-lg">
             <Target className="w-8 h-8 text-white" />
           </div>
-          <h3 className="text-2xl font-bold text-purple-400">Service Opportunity</h3>
+          <h3 className="text-xl sm:text-2xl font-bold text-purple-400">Service Opportunity</h3>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-6 mb-4">
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 sm:gap-4 lg:gap-6 mb-4">
           <div>
-            <div className="text-3xl font-bold text-purple-300 mb-1">{serviceOpportunity}</div>
-            <div className="text-sm text-purple-400">Total Addressable Service Market</div>
+            <div className="text-xl sm:text-2xl lg:text-3xl font-bold text-purple-300 mb-1">{serviceOpportunity}</div>
+            <div className="text-xs sm:text-sm text-purple-400">Total Addressable Service Market</div>
           </div>
           <div>
-            <div className="text-3xl font-bold text-purple-300 mb-1">46%</div>
-            <div className="text-sm text-purple-400">Cite Talent Gaps as Barrier</div>
+            <div className="text-xl sm:text-2xl lg:text-3xl font-bold text-purple-300 mb-1">46%</div>
+            <div className="text-xs sm:text-sm text-purple-400">Cite Talent Gaps as Barrier</div>
           </div>
           <div>
-            <div className="text-3xl font-bold text-purple-300 mb-1">3.4x</div>
-            <div className="text-sm text-purple-400">Faster Time-to-Value with Services</div>
+            <div className="text-xl sm:text-2xl lg:text-3xl font-bold text-purple-300 mb-1">3.4x</div>
+            <div className="text-xs sm:text-sm text-purple-400">Faster Time-to-Value with Services</div>
           </div>
         </div>
 

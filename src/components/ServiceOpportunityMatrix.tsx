@@ -43,15 +43,15 @@ const ServiceOpportunityMatrix: React.FC<ServiceOpportunityMatrixProps> = ({ opp
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.6, delay: 0.3 }}
-      className="bg-black/90 backdrop-blur-sm rounded-xl shadow-2xl border border-gray-700/50 p-6"
+      className="bg-black/90 backdrop-blur-sm rounded-xl shadow-2xl border border-gray-700/50 p-4 sm:p-6"
     >
       <div className="mb-6">
         <div className="flex items-center justify-between mb-4">
           <div>
-            <h2 className="text-xl font-bold text-gray-100 mb-2">
+            <h2 className="text-lg sm:text-xl font-bold text-gray-100 mb-2">
               AI Services Market Opportunity
             </h2>
-            <p className="text-gray-300 text-sm">
+            <p className="text-gray-300 text-xs sm:text-sm">
               High spending + Low implementation success = High service opportunity
             </p>
           </div>
@@ -59,23 +59,25 @@ const ServiceOpportunityMatrix: React.FC<ServiceOpportunityMatrixProps> = ({ opp
           <div className="flex bg-gray-800/60 rounded-lg p-1">
             <button
               onClick={() => setActiveView('gaps')}
-              className={`px-4 py-2 rounded-md text-sm font-medium transition-all ${
+              className={`px-3 sm:px-4 py-2 sm:py-3 rounded-md text-xs sm:text-sm font-medium transition-all min-h-[44px] min-w-[44px] flex items-center justify-center ${
                 activeView === 'gaps'
                   ? 'bg-gray-700 shadow-sm text-gray-100'
                   : 'text-gray-300 hover:text-gray-100'
               }`}
             >
-              Implementation Gaps
+              <span className="hidden sm:inline">Implementation Gaps</span>
+              <span className="sm:hidden">Gaps</span>
             </button>
             <button
               onClick={() => setActiveView('matrix')}
-              className={`px-4 py-2 rounded-md text-sm font-medium transition-all ${
+              className={`px-3 sm:px-4 py-2 sm:py-3 rounded-md text-xs sm:text-sm font-medium transition-all min-h-[44px] min-w-[44px] flex items-center justify-center ${
                 activeView === 'matrix'
                   ? 'bg-gray-700 shadow-sm text-gray-100'
                   : 'text-gray-300 hover:text-gray-100'
               }`}
             >
-              Opportunity Matrix
+              <span className="hidden sm:inline">Opportunity Matrix</span>
+              <span className="sm:hidden">Matrix</span>
             </button>
           </div>
         </div>
@@ -92,49 +94,85 @@ const ServiceOpportunityMatrix: React.FC<ServiceOpportunityMatrixProps> = ({ opp
           >
             {/* Matrix Grid */}
             <div className="mb-6">
-              <div className="grid grid-cols-4 gap-2 mb-4">
-                {/* Header */}
-                <div className="text-xs font-medium text-gray-400 p-2">Sector / Size</div>
-                {companySizes.map(size => (
-                  <div key={size} className="text-xs font-medium text-gray-400 p-2 text-center">
-                    {size.split(' ')[0]}
-                  </div>
-                ))}
-
-                {/* Matrix cells */}
-                {sectors.map(sector => (
-                  <React.Fragment key={sector}>
-                    <div className="text-xs font-medium text-gray-200 p-2 bg-gray-800/60 rounded-md">
-                      {sector}
-                    </div>
-                    {companySizes.map(size => {
-                      const opportunity = getOpportunityByCell(sector, size);
-                      if (!opportunity) {
-                        return <div key={`${sector}-${size}`} className="p-2" />;
-                      }
-
-                      const intensity = getOpportunityIntensity(opportunity.opportunityScore);
-
-                      return (
-                        <motion.div
-                          key={`${sector}-${size}`}
-                          whileHover={{ scale: 1.1 }}
-                          className="p-2 flex items-center justify-center cursor-pointer"
-                          onClick={() => setSelectedOpportunity(
-                            selectedOpportunity === opportunity ? null : opportunity
-                          )}
-                        >
+              {/* Mobile: Show as list, Desktop: Show as matrix */}
+              <div className="block sm:hidden mb-6">
+                <div className="space-y-3">
+                  {opportunities.map((opportunity) => {
+                    const intensity = getOpportunityIntensity(opportunity.opportunityScore);
+                    return (
+                      <motion.div
+                        key={`${opportunity.sector}-${opportunity.companySize}`}
+                        whileHover={{ scale: 1.02 }}
+                        className="bg-gray-800/60 rounded-lg p-3 cursor-pointer min-h-[44px] flex items-center justify-between"
+                        onClick={() => setSelectedOpportunity(
+                          selectedOpportunity === opportunity ? null : opportunity
+                        )}
+                      >
+                        <div>
+                          <div className="text-sm font-medium text-gray-200">{opportunity.sector}</div>
+                          <div className="text-xs text-gray-400">{opportunity.companySize.split(' ')[0]}</div>
+                        </div>
+                        <div className="flex items-center gap-3">
+                          <div className="text-xs text-gray-300">{opportunity.opportunityScore}%</div>
                           <div
-                            className={`rounded-full ${intensity.size} ${intensity.intensity} flex items-center justify-center shadow-lg border-2 border-white`}
+                            className={`rounded-full w-6 h-6 ${intensity.intensity} flex items-center justify-center shadow-lg border border-white`}
                             style={{ backgroundColor: opportunity.color }}
                           >
                             <Target className="w-3 h-3 text-white" />
                           </div>
-                        </motion.div>
-                      );
-                    })}
-                  </React.Fragment>
-                ))}
+                        </div>
+                      </motion.div>
+                    );
+                  })}
+                </div>
+              </div>
+
+              {/* Desktop Matrix */}
+              <div className="hidden sm:block mb-6">
+                <div className="grid grid-cols-4 gap-2 mb-4">
+                  {/* Header */}
+                  <div className="text-xs font-medium text-gray-400 p-2">Sector / Size</div>
+                  {companySizes.map(size => (
+                    <div key={size} className="text-xs font-medium text-gray-400 p-2 text-center">
+                      {size.split(' ')[0]}
+                    </div>
+                  ))}
+
+                  {/* Matrix cells */}
+                  {sectors.map(sector => (
+                    <React.Fragment key={sector}>
+                      <div className="text-xs font-medium text-gray-200 p-2 bg-gray-800/60 rounded-md">
+                        {sector}
+                      </div>
+                      {companySizes.map(size => {
+                        const opportunity = getOpportunityByCell(sector, size);
+                        if (!opportunity) {
+                          return <div key={`${sector}-${size}`} className="p-2" />;
+                        }
+
+                        const intensity = getOpportunityIntensity(opportunity.opportunityScore);
+
+                        return (
+                          <motion.div
+                            key={`${sector}-${size}`}
+                            whileHover={{ scale: 1.1 }}
+                            className="p-2 flex items-center justify-center cursor-pointer min-h-[44px] min-w-[44px]"
+                            onClick={() => setSelectedOpportunity(
+                              selectedOpportunity === opportunity ? null : opportunity
+                            )}
+                          >
+                            <div
+                              className={`rounded-full ${intensity.size} ${intensity.intensity} flex items-center justify-center shadow-lg border-2 border-white`}
+                              style={{ backgroundColor: opportunity.color }}
+                            >
+                              <Target className="w-3 h-3 text-white" />
+                            </div>
+                          </motion.div>
+                        );
+                      })}
+                    </React.Fragment>
+                  ))}
+                </div>
               </div>
 
               {/* Legend */}
@@ -271,18 +309,18 @@ const ServiceOpportunityMatrix: React.FC<ServiceOpportunityMatrixProps> = ({ opp
             </div>
 
             {/* Summary stats */}
-            <div className="mt-6 grid grid-cols-1 md:grid-cols-3 gap-4">
-              <div className="text-center bg-red-900/30 rounded-lg p-4 border border-red-700/30">
-                <div className="text-2xl font-bold text-red-600">78%</div>
-                <div className="text-sm text-gray-300">Average Implementation Gap</div>
+            <div className="mt-6 grid grid-cols-1 sm:grid-cols-3 gap-3 sm:gap-4">
+              <div className="text-center bg-red-900/30 rounded-lg p-3 sm:p-4 border border-red-700/30">
+                <div className="text-xl sm:text-2xl font-bold text-red-600">78%</div>
+                <div className="text-xs sm:text-sm text-gray-300">Average Implementation Gap</div>
               </div>
-              <div className="text-center bg-orange-900/30 rounded-lg p-4 border border-orange-700/30">
-                <div className="text-2xl font-bold text-orange-600">Multi-Billion</div>
-                <div className="text-sm text-gray-300">Total Service Opportunity</div>
+              <div className="text-center bg-orange-900/30 rounded-lg p-3 sm:p-4 border border-orange-700/30">
+                <div className="text-lg sm:text-2xl font-bold text-orange-600">Multi-Billion</div>
+                <div className="text-xs sm:text-sm text-gray-300">Total Service Opportunity</div>
               </div>
-              <div className="text-center bg-green-900/30 rounded-lg p-4 border border-green-700/30">
-                <div className="text-2xl font-bold text-green-600">46%</div>
-                <div className="text-sm text-gray-300">Cite Talent Gaps</div>
+              <div className="text-center bg-green-900/30 rounded-lg p-3 sm:p-4 border border-green-700/30">
+                <div className="text-xl sm:text-2xl font-bold text-green-600">46%</div>
+                <div className="text-xs sm:text-sm text-gray-300">Cite Talent Gaps</div>
               </div>
             </div>
           </motion.div>

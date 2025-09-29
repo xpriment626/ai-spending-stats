@@ -10,7 +10,7 @@ const Header: React.FC = () => {
       transition={{ duration: 0.6 }}
       className="text-center mb-12"
     >
-      <div className="flex justify-center items-center gap-3 mb-4">
+      <div className="flex flex-col sm:flex-row justify-center items-center gap-3 mb-4">
         <motion.div
           animate={{
             rotate: [0, 2, -2, 0],
@@ -28,17 +28,17 @@ const Header: React.FC = () => {
             className="w-12 h-12"
           />
         </motion.div>
-        <h1 className="text-4xl lg:text-5xl font-bold text-white">
+        <h1 className="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-bold text-white text-center sm:text-left">
           <span className="netrunner-text-accent">AI Spending</span> Analysis
         </h1>
       </div>
 
-      <p className="text-lg text-neutral-300 max-w-3xl mx-auto mb-6">
+      <p className="text-sm sm:text-base lg:text-lg text-neutral-300 max-w-3xl mx-auto mb-6 px-4">
         Analyzing the growing disconnect between AI tooling acceleration and enterprise implementation success.
         This data room offers insights into the $154B service opportunity created by this mismatch.
       </p>
 
-      <div className="flex justify-center items-center gap-8 text-sm text-neutral-400">
+      <div className="flex flex-col sm:flex-row justify-center items-center gap-4 sm:gap-6 lg:gap-8 text-xs sm:text-sm text-neutral-400 px-4">
         <div className="flex items-center gap-2">
           <TrendingUp className="w-4 h-4 text-blue-400" />
           <span>97% YoY Growth</span>

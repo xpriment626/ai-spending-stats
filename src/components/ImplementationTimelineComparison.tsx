@@ -80,27 +80,28 @@ const ImplementationTimelineComparison: React.FC = () => {
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.6, delay: 0.2 }}
-      className="vercel-content-card p-8 mb-8"
+      className="vercel-content-card p-4 sm:p-6 lg:p-8 mb-6 sm:mb-8"
     >
-      <div className="mb-8">
-        <h2 className="text-xl font-bold text-white mb-2 flex items-center gap-3">
-          <Clock className="w-6 h-6 text-blue-400" />
-          Implementation Timeline Comparison
+      <div className="mb-6 sm:mb-8">
+        <h2 className="text-lg sm:text-xl font-bold text-white mb-2 flex items-center gap-2 sm:gap-3">
+          <Clock className="w-5 h-5 sm:w-6 sm:h-6 text-blue-400" />
+          <span className="hidden sm:inline">Implementation Timeline Comparison</span>
+          <span className="sm:hidden">Timeline Comparison</span>
         </h2>
-        <p className="text-gray-300 text-sm">
+        <p className="text-gray-300 text-xs sm:text-sm px-0 sm:px-0">
           Service-assisted implementations achieve faster time-to-value with higher success rates
         </p>
       </div>
 
       {/* High-Level Comparison */}
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6 lg:gap-8 mb-8 sm:mb-12">
         {timelineData.map((data, index) => (
           <motion.div
             key={data.method}
             initial={{ opacity: 0, x: index === 0 ? -20 : 20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ delay: 0.4 + index * 0.2, duration: 0.5 }}
-            className={`${getColorClasses(data.color, 'bg')} rounded-xl p-8 border ${getColorClasses(data.color, 'border')}`}
+            className={`${getColorClasses(data.color, 'bg')} rounded-xl p-4 sm:p-6 lg:p-8 border ${getColorClasses(data.color, 'border')}`}
           >
             <div className="flex items-center gap-3 mb-6">
               <div className={`p-2 ${data.color === 'red' ? 'bg-red-500' : 'bg-green-500'} rounded-lg text-white`}>
@@ -111,18 +112,18 @@ const ImplementationTimelineComparison: React.FC = () => {
               </h3>
             </div>
 
-            <div className="grid grid-cols-2 gap-6 mb-6">
+            <div className="grid grid-cols-2 gap-3 sm:gap-6 mb-4 sm:mb-6">
               <div>
-                <div className={`text-2xl font-bold ${getColorClasses(data.color, 'text')}`}>
+                <div className={`text-xl sm:text-2xl font-bold ${getColorClasses(data.color, 'text')}`}>
                   {data.timeToValue} months
                 </div>
-                <div className="text-sm text-gray-400">Time to Value</div>
+                <div className="text-xs sm:text-sm text-gray-400">Time to Value</div>
               </div>
               <div>
-                <div className={`text-2xl font-bold ${getColorClasses(data.color, 'text')}`}>
+                <div className={`text-xl sm:text-2xl font-bold ${getColorClasses(data.color, 'text')}`}>
                   {data.successRate}%
                 </div>
-                <div className="text-sm text-gray-400">Success Rate</div>
+                <div className="text-xs sm:text-sm text-gray-400">Success Rate</div>
               </div>
             </div>
 
@@ -216,30 +217,30 @@ const ImplementationTimelineComparison: React.FC = () => {
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 1.2, duration: 0.6 }}
-        className="grid grid-cols-1 md:grid-cols-3 gap-6 p-6 bg-gradient-to-r from-purple-500/10 to-blue-500/10 rounded-lg border border-purple-500/30 backdrop-blur-sm"
+        className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6 p-4 sm:p-6 bg-gradient-to-r from-purple-500/10 to-blue-500/10 rounded-lg border border-purple-500/30 backdrop-blur-sm"
       >
         <div className="text-center">
           <div className="flex items-center justify-center gap-2 mb-2">
             <Zap className="w-5 h-5 text-purple-400" />
-            <div className="text-2xl font-bold text-purple-300">2.2x</div>
+            <div className="text-xl sm:text-2xl font-bold text-purple-300">2.2x</div>
           </div>
-          <div className="text-sm text-purple-400">Faster Time-to-Value</div>
+          <div className="text-xs sm:text-sm text-purple-400">Faster Time-to-Value</div>
         </div>
 
         <div className="text-center">
           <div className="flex items-center justify-center gap-2 mb-2">
             <TrendingUp className="w-5 h-5 text-purple-400" />
-            <div className="text-2xl font-bold text-purple-300">3.5x</div>
+            <div className="text-xl sm:text-2xl font-bold text-purple-300">3.5x</div>
           </div>
-          <div className="text-sm text-purple-400">Higher Success Rate</div>
+          <div className="text-xs sm:text-sm text-purple-400">Higher Success Rate</div>
         </div>
 
         <div className="text-center">
           <div className="flex items-center justify-center gap-2 mb-2">
             <Users className="w-5 h-5 text-purple-400" />
-            <div className="text-2xl font-bold text-purple-300">68%</div>
+            <div className="text-xl sm:text-2xl font-bold text-purple-300">68%</div>
           </div>
-          <div className="text-sm text-purple-400">Cite Talent Gaps as Barrier</div>
+          <div className="text-xs sm:text-sm text-purple-400">Cite Talent Gaps as Barrier</div>
         </div>
       </motion.div>
 

@@ -32,18 +32,18 @@ const SpendingChart: React.FC<SpendingChartProps> = ({ data }) => {
       initial={{ opacity: 0, scale: 0.95 }}
       animate={{ opacity: 1, scale: 1 }}
       transition={{ duration: 0.6 }}
-      className="bg-black/90 backdrop-blur-sm rounded-xl shadow-2xl border border-gray-700/50 p-6"
+      className="bg-black/90 backdrop-blur-sm rounded-xl shadow-2xl border border-gray-700/50 p-4 sm:p-6"
     >
       <div className="mb-6">
-        <h2 className="text-xl font-bold text-gray-100 mb-2">
+        <h2 className="text-lg sm:text-xl font-bold text-gray-100 mb-2">
           Enterprise AI Spending Growth
         </h2>
-        <p className="text-gray-300 text-sm">
+        <p className="text-gray-300 text-xs sm:text-sm">
           Global enterprise AI investment trajectory (2020-2028)
         </p>
       </div>
 
-      <div className="h-80">
+      <div className="h-60 sm:h-80">
         <ResponsiveContainer width="100%" height="100%">
           <AreaChart data={data} margin={{ top: 20, right: 30, left: 20, bottom: 5 }}>
             <defs>
@@ -90,17 +90,17 @@ const SpendingChart: React.FC<SpendingChartProps> = ({ data }) => {
         </ResponsiveContainer>
       </div>
 
-      <div className="grid grid-cols-3 gap-4 mt-6 pt-4 border-t border-gray-600/40">
+      <div className="grid grid-cols-3 gap-2 sm:gap-4 mt-4 sm:mt-6 pt-4 border-t border-gray-600/40">
         <div className="text-center">
-          <div className="text-lg font-bold text-blue-600">$632B</div>
+          <div className="text-sm sm:text-lg font-bold text-blue-600">$632B</div>
           <div className="text-xs text-gray-400">2028 Forecast</div>
         </div>
         <div className="text-center">
-          <div className="text-lg font-bold text-green-600">29%</div>
+          <div className="text-sm sm:text-lg font-bold text-green-600">29%</div>
           <div className="text-xs text-gray-400">CAGR 2024-28</div>
         </div>
         <div className="text-center">
-          <div className="text-lg font-bold text-purple-600">96.7%</div>
+          <div className="text-sm sm:text-lg font-bold text-purple-600">96.7%</div>
           <div className="text-xs text-gray-400">2024 Growth</div>
         </div>
       </div>

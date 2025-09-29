@@ -41,13 +41,13 @@ const IndustryBreakdown: React.FC<IndustryBreakdownProps> = ({ industryData, com
   };
 
   return (
-    <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+    <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-6">
       {/* Industry Breakdown */}
       <motion.div
         initial={{ opacity: 0, x: -20 }}
         animate={{ opacity: 1, x: 0 }}
         transition={{ duration: 0.6, delay: 0.2 }}
-        className="bg-black/90 backdrop-blur-sm rounded-xl shadow-2xl border border-gray-700/50 p-6"
+        className="bg-black/90 backdrop-blur-sm rounded-xl shadow-2xl border border-gray-700/50 p-4 sm:p-6"
       >
         <div className="mb-6">
           <h2 className="text-xl font-bold text-gray-100 mb-2">

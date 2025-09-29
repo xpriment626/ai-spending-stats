@@ -109,14 +109,14 @@ const KeyMetrics: React.FC<KeyMetricsProps> = ({ metrics: _ }) => {
         <p className="text-neutral-300">The disconnect between AI spending and successful outcomes</p>
       </div>
 
-      <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+      <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8">
         {metricPairs.map((pair, index) => (
           <motion.div
             key={`${pair.investment.title}-${pair.reality.title}`}
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: index * 0.1, duration: 0.5 }}
-            className="vercel-content-card p-6 relative overflow-hidden"
+            className="vercel-content-card p-4 sm:p-6 relative overflow-hidden"
           >
             {/* Gap Indicator */}
             {pair.gapPercentage && (
@@ -127,7 +127,7 @@ const KeyMetrics: React.FC<KeyMetricsProps> = ({ metrics: _ }) => {
             )}
 
             {/* Investment Metric */}
-            <div className="bg-gradient-to-r from-blue-500/10 to-indigo-500/10 rounded-lg p-4 mb-3 border border-blue-500/30">
+            <div className="bg-gradient-to-r from-blue-500/10 to-indigo-500/10 rounded-lg p-3 sm:p-4 mb-3 border border-blue-500/30">
               <div className="flex items-center gap-2 mb-2">
                 <DollarSign className="w-4 h-4 text-blue-400" />
                 <h3 className="text-sm font-medium text-blue-300">
@@ -135,7 +135,7 @@ const KeyMetrics: React.FC<KeyMetricsProps> = ({ metrics: _ }) => {
                 </h3>
               </div>
               <div className="flex items-center justify-between">
-                <div className="text-2xl font-bold text-blue-100">
+                <div className="text-xl sm:text-2xl font-bold text-blue-100">
                   {pair.investment.value}
                 </div>
                 <div className={`flex items-center gap-1 px-2 py-1 rounded-full text-xs font-medium ${getTrendColor(pair.investment.trend, true)}`}>
@@ -153,7 +153,7 @@ const KeyMetrics: React.FC<KeyMetricsProps> = ({ metrics: _ }) => {
             </div>
 
             {/* Reality Metric */}
-            <div className="bg-gradient-to-r from-red-500/10 to-orange-500/10 rounded-lg p-4 border border-red-500/30">
+            <div className="bg-gradient-to-r from-red-500/10 to-orange-500/10 rounded-lg p-3 sm:p-4 border border-red-500/30">
               <div className="flex items-center gap-2 mb-2">
                 <AlertTriangle className="w-4 h-4 text-red-400" />
                 <h3 className="text-sm font-medium text-red-300">
@@ -161,7 +161,7 @@ const KeyMetrics: React.FC<KeyMetricsProps> = ({ metrics: _ }) => {
                 </h3>
               </div>
               <div className="flex items-center justify-between">
-                <div className="text-2xl font-bold text-red-100">
+                <div className="text-xl sm:text-2xl font-bold text-red-100">
                   {pair.reality.value}
                 </div>
                 <div className={`flex items-center gap-1 px-2 py-1 rounded-full text-xs font-medium ${getTrendColor(pair.reality.trend)}`}>

@@ -43,31 +43,31 @@ function Landing() {
     <div className="h-screen bg-gradient-to-br from-black via-neutral-950 to-black flex flex-col overflow-hidden relative">
       <NetrunnerBackground />
       {/* Header Navigation */}
-      <header className="flex-none px-8 py-6 relative z-10">
+      <header className="flex-none px-4 sm:px-8 py-4 sm:py-6 relative z-10">
         <nav className="flex justify-between items-center max-w-7xl mx-auto">
           <div className="flex items-center">
             <img
               src="/assets/arasaka-logo.png"
               alt="Arasaka Labs"
-              className="h-12 w-auto"
+              className="h-8 sm:h-10 md:h-12 w-auto"
             />
           </div>
-          <div className="flex items-center space-x-8">
-            <Link to="/" className="netrunner-nav-link font-medium">Home</Link>
-            {/* <Link to="/blog" className="netrunner-nav-link font-medium">Blog</Link> */}
-            <Link to="/thesis" className="netrunner-nav-link font-medium">Thesis</Link>
-            <a href="https://calendly.com/emmettchilds_/shadow-office" target="_blank" rel="noopener noreferrer" className="netrunner-glass text-neutral-200 px-4 py-2 rounded-lg hover:text-white transition-all font-medium">Contact</a>
+          <div className="flex items-center space-x-2 sm:space-x-4 lg:space-x-8">
+            <Link to="/" className="netrunner-nav-link font-medium text-sm sm:text-base">Home</Link>
+            {/* <Link to="/blog" className="netrunner-nav-link font-medium text-sm sm:text-base">Blog</Link> */}
+            <Link to="/thesis" className="netrunner-nav-link font-medium text-sm sm:text-base">Thesis</Link>
+            <a href="https://calendly.com/emmettchilds_/shadow-office" target="_blank" rel="noopener noreferrer" className="netrunner-glass text-neutral-200 px-3 py-2 sm:px-4 sm:py-2 rounded-lg hover:text-white transition-all font-medium text-sm sm:text-base min-h-[44px] flex items-center">Contact</a>
           </div>
         </nav>
       </header>
 
       {/* Main Content - Centered */}
       <main className="flex-1 flex items-center relative z-10">
-        <section className="w-full px-8">
+        <section className="w-full px-4 sm:px-8">
           <div className="max-w-7xl mx-auto">
             {/* Title - Left Aligned */}
             <motion.h1
-              className="text-5xl font-bold text-white mb-8 max-w-4xl"
+              className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-6 sm:mb-8 max-w-4xl"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
@@ -77,14 +77,14 @@ function Landing() {
 
             {/* Tabbed Content Section */}
             <motion.div
-              className="max-w-5xl vercel-content-card p-8"
+              className="max-w-5xl vercel-content-card p-4 sm:p-6 lg:p-8"
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.1 }}
             >
               {/* Tab Navigation */}
               <motion.div
-                className="flex space-x-2 mb-8"
+                className="flex flex-wrap gap-2 sm:space-x-2 mb-6 sm:mb-8"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.3 }}
@@ -93,7 +93,7 @@ function Landing() {
                   <button
                     key={tab.id}
                     onClick={() => setActiveTab(tab.id)}
-                    className={`px-6 py-3 rounded-lg font-mono text-sm font-medium transition-all duration-300 ${
+                    className={`px-4 sm:px-6 py-2 sm:py-3 rounded-lg font-mono text-xs sm:text-sm font-medium transition-all duration-300 min-h-[44px] flex-1 sm:flex-none ${
                       activeTab === tab.id
                         ? 'netrunner-tab active text-white'
                         : 'netrunner-tab text-neutral-400 hover:text-neutral-200'
@@ -105,7 +105,7 @@ function Landing() {
               </motion.div>
 
               {/* Tab Content */}
-              <div className="min-h-[240px] md:min-h-[260px]">
+              <div className="min-h-[280px] sm:min-h-[240px] md:min-h-[260px]">
                 <AnimatePresence mode="wait">
                   <motion.div
                     key={activeTab}
@@ -113,9 +113,9 @@ function Landing() {
                     animate={{ opacity: 1, x: 0 }}
                     exit={{ opacity: 0, x: -20 }}
                     transition={{ duration: 0.4 }}
-                    className="space-y-8"
+                    className="space-y-4 sm:space-y-8"
                   >
-                    <h2 className="text-2xl font-semibold text-white mb-6">
+                    <h2 className="text-xl sm:text-2xl font-semibold text-white mb-4 sm:mb-6">
                       {activeTabData.title}
                     </h2>
 
@@ -123,7 +123,7 @@ function Landing() {
                       {activeTabData.content.map((paragraph, index) => (
                         <motion.p
                           key={index}
-                          className="text-base text-neutral-300 leading-relaxed"
+                          className="text-sm sm:text-base text-neutral-300 leading-relaxed"
                           initial={{ opacity: 0, y: 10 }}
                           animate={{ opacity: 1, y: 0 }}
                           transition={{ duration: 0.4, delay: index * 0.1 }}

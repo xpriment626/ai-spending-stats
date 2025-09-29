@@ -26,27 +26,27 @@ function Stats() {
       {/* <NetrunnerBackground /> */}
 
       {/* Header Navigation */}
-      <header className="flex-none px-8 py-6 relative z-10">
+      <header className="flex-none px-4 sm:px-8 py-4 sm:py-6 relative z-10">
         <nav className="flex justify-between items-center max-w-7xl mx-auto">
           <div className="flex items-center">
-            <Link to="/" className="cursor-pointer">
+            <Link to="/" className="cursor-pointer min-h-[44px] min-w-[44px] flex items-center">
               <img
                 src="/assets/arasaka-logo.png"
                 alt="Arasaka Labs"
-                className="h-12 w-auto hover:opacity-80 transition-opacity"
+                className="h-8 sm:h-10 md:h-12 w-auto hover:opacity-80 transition-opacity"
               />
             </Link>
           </div>
-          <div className="flex items-center space-x-8">
-            <Link to="/" className="netrunner-nav-link font-medium">Home</Link>
-            {/* <Link to="/blog" className="netrunner-nav-link font-medium">Blog</Link> */}
-            <Link to="/thesis" className="netrunner-nav-link font-medium text-white">Thesis</Link>
-            <Link to="/contact" className="netrunner-glass text-neutral-200 px-4 py-2 rounded-lg hover:text-white transition-all font-medium">Contact</Link>
+          <div className="flex items-center gap-2 sm:gap-4 lg:gap-8">
+            <Link to="/" className="netrunner-nav-link font-medium text-sm sm:text-base min-h-[44px] min-w-[44px] flex items-center justify-center px-2 sm:px-0">Home</Link>
+            {/* <Link to="/blog" className="netrunner-nav-link font-medium text-sm sm:text-base min-h-[44px] min-w-[44px] flex items-center justify-center">Blog</Link> */}
+            <Link to="/thesis" className="netrunner-nav-link font-medium text-white text-sm sm:text-base min-h-[44px] min-w-[44px] flex items-center justify-center px-2 sm:px-0">Thesis</Link>
+            <Link to="/contact" className="netrunner-glass text-neutral-200 px-4 py-3 sm:px-4 sm:py-2 rounded-lg hover:text-white transition-all font-medium text-sm sm:text-base min-h-[44px] flex items-center">Contact</Link>
           </div>
         </nav>
       </header>
 
-      <div className="container mx-auto px-4 py-8 max-w-7xl relative z-10">
+      <div className="container mx-auto px-3 sm:px-4 py-4 sm:py-8 max-w-7xl relative z-10">
         <Header />
 
         {/* Phase 1: Lead with the Paradox */}
@@ -59,9 +59,9 @@ function Stats() {
         />
 
         {/* Thesis Introduction */}
-        <div className="vercel-content-card p-8 mb-12 text-center">
-          <h2 className="text-2xl font-bold text-white mb-4">The Deployment Gap Thesis</h2>
-          <p className="text-lg text-white max-w-4xl mx-auto leading-relaxed">
+        <div className="vercel-content-card p-4 sm:p-6 lg:p-8 mb-8 sm:mb-12 text-center">
+          <h2 className="text-xl sm:text-2xl lg:text-3xl font-bold text-white mb-3 sm:mb-4">The Deployment Gap Thesis</h2>
+          <p className="text-base sm:text-lg text-white max-w-4xl mx-auto leading-relaxed px-2 sm:px-0">
             AI tooling infrastructure evolves exponentially while enterprise implementation capabilities advance linearly.
             This fundamental mismatch creates persistent gaps between investment and outcomes, generating unprecedented
             opportunities for forward-deployed engineering services.
@@ -72,9 +72,9 @@ function Stats() {
         <KeyMetrics metrics={keyMetrics} />
 
         {/* Section Divider */}
-        <div className="vercel-content-card p-6 mb-8 text-center">
-          <h3 className="text-xl font-semibold text-white mb-2">Part I: The Implementation Reality</h3>
-          <p className="text-neutral-300">
+        <div className="vercel-content-card p-4 sm:p-6 mb-6 sm:mb-8 text-center">
+          <h3 className="text-lg sm:text-xl font-semibold text-white mb-2">Part I: The Implementation Reality</h3>
+          <p className="text-sm sm:text-base text-neutral-300 px-2 sm:px-0">
             Examining the specific gaps between AI investment and successful deployment
           </p>
         </div>
@@ -92,9 +92,9 @@ function Stats() {
 
 
         {/* Section Divider */}
-        <div className="vercel-content-card p-6 mb-8 text-center">
-          <h3 className="text-xl font-semibold text-white mb-2">Part II: Market Scale & Distribution</h3>
-          <p className="text-neutral-300">
+        <div className="vercel-content-card p-4 sm:p-6 mb-6 sm:mb-8 text-center">
+          <h3 className="text-lg sm:text-xl font-semibold text-white mb-2">Part II: Market Scale & Distribution</h3>
+          <p className="text-sm sm:text-base text-neutral-300 px-2 sm:px-0">
             Understanding the trajectory and geographic distribution of AI investment
           </p>
         </div>
@@ -114,15 +114,15 @@ function Stats() {
         </div>
 
         {/* Thesis Conclusion */}
-        <div className="vercel-content-card p-8 mb-8 text-center">
-          <h3 className="text-2xl font-bold text-white mb-4">The Service Opportunity</h3>
-          <div className="max-w-4xl mx-auto space-y-4">
-            <p className="text-lg text-neutral-300 leading-relaxed">
+        <div className="vercel-content-card p-4 sm:p-6 lg:p-8 mb-6 sm:mb-8 text-center">
+          <h3 className="text-xl sm:text-2xl font-bold text-white mb-3 sm:mb-4">The Service Opportunity</h3>
+          <div className="max-w-4xl mx-auto space-y-3 sm:space-y-4 px-2 sm:px-0">
+            <p className="text-sm sm:text-base lg:text-lg text-neutral-300 leading-relaxed">
               The data reveals a clear pattern: as AI tooling accelerates exponentially, enterprise implementation
               capabilities evolve linearly. This creates a persistent and growing gap that high-touch engineering and strategic
               services can profitably address.
             </p>
-            <p className="text-neutral-300 leading-relaxed">
+            <p className="text-sm sm:text-base text-neutral-300 leading-relaxed">
               Organizations that bridge this gap through forward-deployed engineering teams achieve 3.5x higher
               success rates and compress time-to-value from 24 months to 11 months, creating sustainable competitive
               advantages in an AI-driven economy.

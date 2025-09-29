@@ -1,8 +1,8 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
 
 @layer base {
   * {
@@ -118,5 +118,72 @@
 
   .netrunner-text-red-secondary {
     @apply text-red-400;
+  }
+
+  /* Mobile-specific enhancements */
+  @media (max-width: 640px) {
+    .netrunner-glass {
+      @apply backdrop-blur-sm;
+      box-shadow: 0 4px 16px 0 rgba(255, 255, 255, 0.1);
+    }
+
+    .vercel-content-card {
+      box-shadow: 0 10px 15px -5px rgba(0, 0, 0, 0.3), 0 5px 5px -5px rgba(0, 0, 0, 0.1);
+    }
+  }
+
+  /* Better touch targets on mobile */
+  @media (max-width: 768px) {
+    button, a[role="button"], .cursor-pointer {
+      min-height: 44px;
+      min-width: 44px;
+    }
+
+    /* Ensure interactive elements are easily tappable */
+    .cursor-pointer:not(.min-h-\[44px\]) {
+      padding: 0.75rem;
+    }
+
+    /* Better spacing for mobile interactions */
+    .grid > .cursor-pointer {
+      padding: 0.5rem;
+    }
+
+    /* Optimize font sizes for mobile readability */
+    .text-xs {
+      font-size: 0.75rem;
+    }
+
+    .text-sm {
+      font-size: 0.875rem;
+    }
+  }
+
+  /* Optimize animations for mobile */
+  @media (max-width: 768px) {
+    /* Reduce animation complexity on mobile for better performance */
+    .motion-div {
+      transform: translateZ(0);
+      will-change: transform, opacity;
+    }
+
+    /* Ensure smooth scrolling on mobile */
+    * {
+      -webkit-overflow-scrolling: touch;
+    }
+
+    /* Reduce motion blur on fast animations */
+    .framer-motion {
+      backface-visibility: hidden;
+      perspective: 1000px;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    * {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
   }
 }
